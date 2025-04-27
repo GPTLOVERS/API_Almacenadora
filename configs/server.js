@@ -9,7 +9,6 @@ import authRoutes from "../src/Auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import productRoutes from "../src/product/product.routes.js"
 import { userSeeder } from "../src/seeders/user.seeder.js";
-import { categorySeeder } from "../src/seeders/category.seeder.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 const middlewares = (app) => {
@@ -44,7 +43,6 @@ export const initServer = () => {
         routes(app);
         app.listen(process.env.PORT);
         userSeeder();
-        categorySeeder();
         const elapsedTime = Date.now() - timeInit;
         console.log(`Server running on port ${process.env.PORT} ${elapsedTime}ms`);
     }catch(error){

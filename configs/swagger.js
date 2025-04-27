@@ -5,11 +5,11 @@ const options ={
     swaggerDefinition:{
         openapi:"3.0.0",
         info:{
-            title: "Proyecto Final",
+            title: "Almacenadora",
             version: "1.0.0",
             description: "API de siste de facturación de productos",
             contact:{
-                name: "Javier Herrera",
+                name: "GPT_LOVERS",
                 email: "jherrera-2020459@kinal.edu.gt"
             }
         },
