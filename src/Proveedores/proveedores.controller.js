@@ -47,6 +47,32 @@ export const getProveedores = async (req, res) => {
     }
 };
 
+// Nueva función para obtener un proveedor por ID
+export const getProveedorById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const proveedor = await Proveedor.findById(id);
+
+        if (!proveedor) {
+            return res.status(404).json({
+                success: false,
+                message: "Proveedor no encontrado",
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            proveedor,
+        });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error al obtener el proveedor",
+            error: err.message,
+        });
+    }
+};
+
 export const updateProveedor = async (req, res) => {
     try {
         const { id } = req.params;
