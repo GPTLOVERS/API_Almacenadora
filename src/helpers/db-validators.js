@@ -1,5 +1,6 @@
 import User from "../user/user.model.js";
 import Product from "../product/product.model.js";
+import Batch from "../batch/Batch.model.js"
 import Proveedor from "../Proveedores/proveedores.model.js"; // Importa el modelo de Proveedores
 
 export const emailExist = async (email = "") => {
@@ -35,5 +36,12 @@ export const proveedorExist = async (id = "") => {
     const exist = await Proveedor.findById(id);
     if (!exist) {
         throw new Error(`The provider with ID ${id} does not exist`);
+    }
+};
+
+export const batchExist = async (id = "") => {
+    const exist = await Batch.findById(id);
+    if (!exist) {
+        throw new Error(`The batch with ID ${id} does not exist`);
     }
 };
