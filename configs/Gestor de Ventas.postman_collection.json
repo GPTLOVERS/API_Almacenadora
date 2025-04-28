@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "68cde713-af65-4677-b0cb-89bc2f606b5f",
+		"_postman_id": "ec7febf8-af17-4cab-8a4f-71b5a45145ef",
 		"name": "Gestor de Ventas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "38544544"
+		"_exporter_id": "44505007",
+		"_collection_link": "https://pablovillela10-354340.postman.co/workspace/pablovillela10's-Workspace~0a07c0d2-5277-453c-89eb-65305706f310/collection/44505007-ec7febf8-af17-4cab-8a4f-71b5a45145ef?action=share&source=collection_link&creator=44505007"
 	},
 	"item": [
 		{
@@ -1313,6 +1314,183 @@
 								"proveedores",
 								"deleteProveedor",
 								"680eda93fe7988a868c7513a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Batch",
+			"item": [
+				{
+					"name": "Listar Lote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/getBatch",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"getBatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Lote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noBatch\": \"1\",\r\n    \"type\": \"prueba\",\r\n    \"product\": \"680f8e1fdeb74698dc94d152\",\r\n    \"proveedor\": \"680f8e2bdeb74698dc94d156\",\r\n    \"dateOfEntry\": \"2025-02-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/createBatch",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"createBatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Lote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noBatch\": \"2\",\r\n    \"type\": \"pruebaUpdateada\",\r\n    \"product\": \"680f8e1fdeb74698dc94d152\",\r\n    \"proveedor\": \"680f8e2bdeb74698dc94d156\",\r\n    \"dateOfEntry\": \"2025-10-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/updateBatch/680f94178ddd9335326c8bf3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"updateBatch",
+								"680f94178ddd9335326c8bf3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Lote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/deleteBatch/680f94178ddd9335326c8bf3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"deleteBatch",
+								"680f94178ddd9335326c8bf3"
 							]
 						}
 					},

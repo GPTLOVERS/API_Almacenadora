@@ -34,11 +34,13 @@ const batchSchema = Schema({
     timeStamps: true    
 });
 
-loteSchema.methods.toJSON = function(){
+batchSchema.methods.toJSON = function(){
     const { __v, status, _id, ...batch} = this.toObject()
     batch.uid = _id
     return batch
     
 };
 
-export default model("Lote", batchSchema)
+export default model("Batch", batchSchema)
+
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGQ5YzcwODdhNWE2MWVjYmUwN2EiLCJpYXQiOjE3NDU4NDk3OTIsImV4cCI6MTc0NTg1MzM5Mn0.3EfIQxY_b0o7UOChMyJIZtBa2lA3uDl0tAzryk_TDYo
