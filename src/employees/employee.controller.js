@@ -85,7 +85,6 @@ export const updateEmployee = async (req, res) => {
 
 export const deleteEmployee = async (req, res) => {
     try {
-
         if (req.user.role !== "ADMIN_ROLE") {
             return res.status(403).json({
                 message: "Access denied. Only administrators can delete employees."
@@ -94,8 +93,7 @@ export const deleteEmployee = async (req, res) => {
 
         const { uid } = req.params;
 
-        await Employee.findByIdAndUpdate(uid, { status: false }, { new: true });
-
+        await Employee.findByIdAndDelete(uid);
         return res.status(200).json({
             success: true,
             message: "Employee deleted successfully"

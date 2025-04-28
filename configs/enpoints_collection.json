@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6f013043-a856-406a-8478-193eec15d2a9",
+		"_postman_id": "27bc5703-560b-4b6d-8920-6956bc58ae1c",
 		"name": "Gestor de Ventas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37641996"
+		"_exporter_id": "41832101"
 	},
 	"item": [
 		{
@@ -87,6 +87,40 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"userName\": \"Zodiacal0\",\r\n    \"password\": \"Dispositibo1@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"adminexample@gmail.com\",\r\n    \"password\": \"Admin123@\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1111,6 +1145,172 @@
 									"key": "uid",
 									"value": "67c62702167fa3fddd030aff"
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "CrearEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZDIxMDU1YzkxMGE1MWEyNmU4MzIiLCJpYXQiOjE3NDU4MDE3NTgsImV4cCI6MTc0NTgwNTM1OH0.DPIAjWNi4AH_ECTleuFZwZrgfAZjiiEgVACEZZJEb60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Name\": \"Juan\",\r\n  \"lastName\": \"Perez\",\r\n  \"email\": \"juanperez@example.com\",\r\n  \"role\": \"EMPLOYEE_ROLE\",\r\n  \"phone\": \"12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/employee/createEmployee/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"employee",
+								"createEmployee",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZDIxMDU1YzkxMGE1MWEyNmU4MzIiLCJpYXQiOjE3NDU4MDE3NTgsImV4cCI6MTc0NTgwNTM1OH0.DPIAjWNi4AH_ECTleuFZwZrgfAZjiiEgVACEZZJEb60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/employee/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"employee",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZDIxMDU1YzkxMGE1MWEyNmU4MzIiLCJpYXQiOjE3NDU4MDE3NTgsImV4cCI6MTc0NTgwNTM1OH0.DPIAjWNi4AH_ECTleuFZwZrgfAZjiiEgVACEZZJEb60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"role\": \"ADMIN_ROLE\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/employee/updateEmployee/680ed4c93dc47046ec55c668",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"employee",
+								"updateEmployee",
+								"680ed4c93dc47046ec55c668"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZDIxMDU1YzkxMGE1MWEyNmU4MzIiLCJpYXQiOjE3NDU4MDE3NTgsImV4cCI6MTc0NTgwNTM1OH0.DPIAjWNi4AH_ECTleuFZwZrgfAZjiiEgVACEZZJEb60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/employee/deleteEmployee/680ed4c93dc47046ec55c668",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"employee",
+								"deleteEmployee",
+								"680ed4c93dc47046ec55c668"
 							]
 						}
 					},
