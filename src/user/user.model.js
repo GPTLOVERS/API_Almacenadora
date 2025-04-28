@@ -37,13 +37,9 @@ const userSchema = Schema({
     role: {
         type: String,
         required: true,
-        enum: ["ADMIN_ROLE", "CLIENT_ROLE"],
+        enum: ["ADMIN_ROLE", "CLIENT_ROLE","EMPLOYEE_ROLE"],
         default: "CLIENT_ROLE"
     },
-    history:[{
-        type: Schema.Types.ObjectId,
-        ref: "BuyCart"
-    }],
     status: {
         type: Boolean,
         default: true,
