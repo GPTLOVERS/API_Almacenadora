@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6f013043-a856-406a-8478-193eec15d2a9",
+		"_postman_id": "68cde713-af65-4677-b0cb-89bc2f606b5f",
 		"name": "Gestor de Ventas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37641996"
+		"_exporter_id": "38544544"
 	},
 	"item": [
 		{
@@ -1111,6 +1111,208 @@
 									"key": "uid",
 									"value": "67c62702167fa3fddd030aff"
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proveedores",
+			"item": [
+				{
+					"name": "Crear Proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Proveedor Ejemplo\",\r\n  \"company\": \"Compañía Ejemplo\",\r\n  \"email\": \"proveedor@ejemplo.com\",\r\n  \"phone\": \"123456789\",\r\n  \"address\": \"Calle Ejemplo #123, Ciudad Ejemplo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/createProveedor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"createProveedor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Proveedores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/getProveedores",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"getProveedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Proveedores por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores//getProveedorById/680eda93fe7988a868c7513a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"",
+								"getProveedorById",
+								"680eda93fe7988a868c7513a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Proveedor Actualizado\",\r\n  \"email\": \"nuevoemail@ejemplo.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/updateProveedor/680eda93fe7988a868c7513a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"updateProveedor",
+								"680eda93fe7988a868c7513a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/deleteProveedor/680eda93fe7988a868c7513a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"deleteProveedor",
+								"680eda93fe7988a868c7513a"
 							]
 						}
 					},
