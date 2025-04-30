@@ -17,9 +17,10 @@ const middlewares = (app) => {
     app.use(express.urlencoded({extended:false}));
     app.use(express.json());
     app.use(helmet());
-    app.use(cors());
-    app.use(morgan("dev"));
-
+    app.use(cors({
+        origin: true,
+        credentials: true
+    }));
 };
 
 const routes = (app) =>{

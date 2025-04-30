@@ -16,9 +16,6 @@ const userSchema = Schema({
         required: [true, "username is required"],
         unique: true
     },
-    profilePicture:{
-        type: String
-    },
     email: {
         type: String,
         required: [true, "Email is requiered"],
