@@ -23,7 +23,8 @@ const options ={
         "./src/Auth/auth.routes.js",
         "./src/user/user.routes.js",
         "./src/buyCart/buyCart.routes.js",
-        "./src/product/product.routes.js"
+        "./src/product/product.routes.js",
+        "./src/Proveedores/proveedores.routes.js"
     ]
 }
 
