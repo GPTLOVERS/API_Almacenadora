@@ -8,6 +8,8 @@ import { connectionDB } from "./mongo.js";
 import authRoutes from "../src/Auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import productRoutes from "../src/product/product.routes.js"
+import proveedoresRoutes from "../src/Proveedores/proveedores.routes.js"
+import batchRoutes from "../src/batch/batch.routes.js"
 import { userSeeder } from "../src/seeders/user.seeder.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
 
@@ -24,6 +26,8 @@ const routes = (app) =>{
     app.use("/salesManager/v1/auth", authRoutes);
     app.use("/salesManager/v1/user", userRoutes);
     app.use("/salesManager/v1/product", productRoutes);
+    app.use("/salesManager/v1/proveedores", proveedoresRoutes);
+    app.use("/salesManager/v1/batch", batchRoutes);
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 const connectionMongo = async() =>{

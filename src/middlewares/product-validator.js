@@ -7,7 +7,7 @@ import { productExist } from "../helpers/db-validators.js";
 
 export const registerProductValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "EMPLOYEE_ROLE"),
     body("name").not().isEmpty().withMessage("Name is required"),
     body("description").not().isEmpty().withMessage("userName is required"),
     body("price").not().isEmpty().withMessage("Email is required").isNumeric().withMessage("The price must be number"),
@@ -19,7 +19,7 @@ export const registerProductValidator = [
 
 export const findProductValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "EMPLOYEE_ROLE"),
     validationsFields,
     catchErrors
 ]
