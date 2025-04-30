@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { registerProduct , listProduct, updateProduct, deleteProduct, findProduct, popularityProduct} from "./product.controller.js";
+import { registerProduct , listProduct, updateProduct, deleteProduct, findProduct, popularityProduct, issueProduct} from "./product.controller.js";
 import { registerProductValidator, updateProductValidator, deleteProductValidator , findProductValidator} from "../middlewares/product-validator.js";
 import { hasRoles } from "../middlewares/validate-role.js";
 
@@ -138,6 +138,11 @@ router.get(
 router.get(
     "/popularityProduct",
     popularityProduct
+)
+
+router.patch(
+    "/issueProduct/:uid",
+    issueProduct
 )
 
 export default router;

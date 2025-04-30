@@ -9,7 +9,6 @@ const batchSchema = Schema({
     type:{
         type: String,
         required: [true, "Type of the batch is required."],
-        unique: true
     },
     product:{
         type: Schema.Types.ObjectId,
@@ -24,6 +23,10 @@ const batchSchema = Schema({
     dateOfEntry:{
         type: Date,
         required: [true, "Date of entry of the batch is required."]
+    },
+    stockEntry:{
+        type: Number,
+        require: [true, "stockEntry is required"]
     },
     status:{
         type: Boolean,

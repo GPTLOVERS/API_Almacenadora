@@ -1,11 +1,16 @@
 import Batch from "./Batch.model.js"
+import Product from "../product/product.model.js"
+import Proveedor from "../Proveedores/proveedores.model.js"
 
 export const createBatch = async (req, res) =>{
     try{
         const data = req.body
         const batch = new Batch(data)
+
         await batch.save()
-        
+        await Product.findByIdAndUpdate(batch.product,{$inc: { stock: batch.stockEntry },$push: { receipts: batch.dateOfEntry , batch: batch._id}},{ new: true });        
+        await Proveedor.findByIdAndUpdate(batch.proveedor,{$push:{products: batch.product}}, {new:true})
+
         return res.status(201).json({
             success: true,
             message: "Lote creado con exito.",

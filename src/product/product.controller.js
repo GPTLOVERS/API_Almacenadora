@@ -133,6 +133,40 @@ export const deleteProduct = async(req,res) =>{
     }
 }
 
+export const issueProduct = async (req, res) => {
+    try {
+        const { uid } = req.params;
+        const {issueNum} = req.body;
+        const product = await Product.findById(uid);
+
+        if (!product) {
+            return res.status(404).json({ message: "Product not found" });
+        }
+
+        if (product.stock <= 0) {
+            return res.status(400).json({
+                message: "Issue product failed, stock insufficient"
+            });
+        }
+
+        const now = new Date();
+
+        const updatedProduct = await Product.findByIdAndUpdate(uid, {$inc: { stock: -issueNum, popularity: +issueNum },$push: { issues: now },}, { new: true });
+
+        return res.status(200).json({
+            success: true,
+            message: "Product issued successfully",
+            issuedAt: now,
+            remainingStock: updatedProduct.stock
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            message: "Issue product failed",
+            error: error.message
+        });
+    }
+};
 
 
 

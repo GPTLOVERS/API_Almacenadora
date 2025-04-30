@@ -16,7 +16,8 @@ const productSchema = new Schema({
     },
     stock: {
         type: Number,
-        required: [true, "Stock is required"]
+        required: [true, "Stock is required"],
+        default: 0
     },
     batch: [{
         type: Schema.ObjectId,
@@ -28,7 +29,7 @@ const productSchema = new Schema({
         default: 0
     },
     receipts: [{
-        type: Date,
+        type: String,
         default: []
     }],
     issues: [{
