@@ -12,6 +12,8 @@ import proveedoresRoutes from "../src/Proveedores/proveedores.routes.js"
 import batchRoutes from "../src/batch/batch.routes.js"
 import { userSeeder } from "../src/seeders/user.seeder.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
+import reportRoutes from "../src/report/report.routes.js"
+
 
 const middlewares = (app) => {
     app.use(express.urlencoded({extended:false}));
@@ -21,6 +23,7 @@ const middlewares = (app) => {
         origin: true,
         credentials: true
     }));
+    app.use(morgan("dev"));
 };
 
 const routes = (app) =>{
@@ -29,6 +32,7 @@ const routes = (app) =>{
     app.use("/salesManager/v1/product", productRoutes);
     app.use("/salesManager/v1/proveedores", proveedoresRoutes);
     app.use("/salesManager/v1/batch", batchRoutes);
+    app.use("/salesManager/v1/report", reportRoutes);
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 const connectionMongo = async() =>{

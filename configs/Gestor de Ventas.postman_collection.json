@@ -1,0 +1,1305 @@
+{
+	"info": {
+		"_postman_id": "57e52b0b-e33f-4596-975e-9213c5d0ed78",
+		"name": "Gestor de Ventas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38544176"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Javier\",\r\n    \"surname\": \"Herrera\",\r\n    \"userName\": \"Zodiacal\",\r\n    \"email\": \"javierherrera5513@gmail.com\",\r\n    \"password\": \"Dispositibo1@\",\r\n    \"phone\": \"12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"javierherrera5513@gmail.com\",\r\n    \"password\": \"Dispositibo1@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Buscar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODEzNmU4ODdmZDdkOTM4Y2U2OGQiLCJpYXQiOjE3NDExMjgwNzcsImV4cCI6MTc0MTEzMTY3N30.CSfqex0r15qBMUAizYlV-hz7wOfo2Q1UYWEnZrZNMSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/user/findUser/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"user",
+								"findUser",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67c64cae4a8cccc07dfae8c9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar por Rango",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MGZkNmFkYTBmNzI1ZTFhMmY0NTEiLCJpYXQiOjE3NDEwNDQ5MDMsImV4cCI6MTc0MTA0ODUwM30.SEqboKwMT2xtAZFBT0dXTS9fGzL-zofA7iBh0eZc24w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/user/findUser/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"user",
+								"findUser",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Historial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MGZkNmFkYTBmNzI1ZTFhMmY0NTEiLCJpYXQiOjE3NDEwNDQ5MDMsImV4cCI6MTc0MTA0ODUwM30.SEqboKwMT2xtAZFBT0dXTS9fGzL-zofA7iBh0eZc24w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/user/history/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"user",
+								"history",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67c78348b5b16b80aa204a23"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDEzNTM4MjksImV4cCI6MTc0MTM1NzQyOX0.DNSHCOFVsxOQtu23v9QZ8h-ENEGsDwCD2Ljz-T9QRxw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"67caf5096dfa06e86590c2c4\",\r\n    \"password\": \"Dispositibo1@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/user/deleteUser/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"user",
+								"deleteUser",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67caf5096dfa06e86590c2c4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar contraseña",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\": \"EpicGamesCasiMeRobanLaCuenta1@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/user/updatePassword/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"user",
+								"updatePassword",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ad2db8c67b477e42011a9f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Foto de Perfil",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "newProfilePicture",
+									"type": "file",
+									"src": "/C:/Users/javie/Desktop/oreo.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/user/updatePictureProfile/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"user",
+								"updatePictureProfile",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ad2db8c67b477e42011a9f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Información",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDEzNTUwNTQsImV4cCI6MTc0MTM1ODY1NH0.0x46DZ1Fndysve4nEU2Mcdkbspd8LdNqgyD4vTKCS-g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"67c78348b5b16b80aa204a23\",\r\n    \"userName\": \"confleis53\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/user/updateUser/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"user",
+								"updateUser",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67c78348b5b16b80aa204a23"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Registrar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzIzMTAsImV4cCI6MTc0NTk3NTkxMH0.mC24yXNz1HyiM0hBluCB5mhfGqgKn7Z_ROQ2_bnQLJg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Croissants de Mantequilla\",\r\n    \"description\": \"Deliciosos croissants de mantequilla recién horneados.\",\r\n    \"price\": 12.00,\r\n    \"brand\": \"Pastelería Los Andes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/registerProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"registerProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Productos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/listProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"listProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Producto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/findProduct/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"findProduct",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67c7895e501ddaffb94ebda0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Popularidad del producto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/popularityProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"popularityProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Queso Rayado\",\r\n    \"description\": \"que en rallas\",\r\n    \"price\": 25.00,\r\n    \"stock\": 5,\r\n    \"brand\": \"Palma\",\r\n    \"category\": \"67b14aec70945fe2dc5ad883\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/updateProduct/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"updateProduct",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67c7895e501ddaffb94ebda0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Venta de Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"issueNum\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/issueProduct/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"issueProduct",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "68116cc0666d5c6630001d2e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MGZkNmFkYTBmNzI1ZTFhMmY0NTEiLCJpYXQiOjE3NDEwMzM0MzQsImV4cCI6MTc0MTAzNzAzNH0.1374gDTPUkZCj1mwjsLDZOVsvrFPG5uerBJldhVy_dc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/deleteProduct/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"deleteProduct",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67b14af770945fe2dc5ad885"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proveedores",
+			"item": [
+				{
+					"name": "Crear Proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzIzMTAsImV4cCI6MTc0NTk3NTkxMH0.mC24yXNz1HyiM0hBluCB5mhfGqgKn7Z_ROQ2_bnQLJg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Proveedor Ejemplo\",\r\n  \"company\": \"Compañía Ejemplo\",\r\n  \"email\": \"proveedor@ejemplo.com\",\r\n  \"phone\": \"123456789\",\r\n  \"address\": \"Calle Ejemplo #123, Ciudad Ejemplo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/createProveedor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"createProveedor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Proveedores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYwNzEzMzMsImV4cCI6MTc0NjA3NDkzM30.Yzp-GuoxYrSiFco76aBf4nrlBsLgJ2hrS260Bk0Ylt0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/getProveedores",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"getProveedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Proveedores por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjE4MDksImV4cCI6MTc0NjEyNTQwOX0.PA6o_Vx5rpzPLtMITklEAZ8zmoPuYAaYiaq2C_o7jKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/getProveedorById/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"getProveedorById",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "68116cd1666d5c6630001d32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYwNjM0OTEsImV4cCI6MTc0NjA2NzA5MX0.y6IfygHFCzzAkXv7P8fcav5JB3hjLsDVrK6vsJ4ANpg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Proveedor Actualizado\",\r\n  \"email\": \"nuevoemail@ejemplo.com\",\r\n  \"addres\": \"wbos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/updateProveedor/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"updateProveedor",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6812c78ba0c0a2ac96742e6e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/deleteProveedor/680eda93fe7988a868c7513a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"deleteProveedor",
+								"680eda93fe7988a868c7513a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Batch",
+			"item": [
+				{
+					"name": "Listar Lote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/getBatch",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"getBatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Lote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzYxMTIsImV4cCI6MTc0NTk3OTcxMn0.VxROaUaTDHGk_ACcrGH8R2zG9321S83ATW_IjIWbry4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noBatch\": \"1\",\r\n    \"type\": \"prueba\",\r\n    \"stockEntry\": 80,\r\n    \"product\": \"68116cc0666d5c6630001d2e\",\r\n    \"proveedor\": \"68116cd1666d5c6630001d32\",\r\n    \"dateOfEntry\": \"2025-02-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/createBatch",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"createBatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Lote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noBatch\": \"2\",\r\n    \"type\": \"pruebaUpdateada\",\r\n    \"product\": \"680f8e1fdeb74698dc94d152\",\r\n    \"proveedor\": \"680f8e2bdeb74698dc94d156\",\r\n    \"dateOfEntry\": \"2025-10-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/updateBatch/680f94178ddd9335326c8bf3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"updateBatch",
+								"680f94178ddd9335326c8bf3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Lote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/deleteBatch/680f94178ddd9335326c8bf3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"deleteBatch",
+								"680f94178ddd9335326c8bf3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Generar reporte de inventario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/report/generateInventoryReport",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"report",
+								"generateInventoryReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar reporte de movimientos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2025-04-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/report/generateInventoryMovementsReport",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"report",
+								"generateInventoryMovementsReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar graficas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjE4MDksImV4cCI6MTc0NjEyNTQwOX0.PA6o_Vx5rpzPLtMITklEAZ8zmoPuYAaYiaq2C_o7jKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actividadPorFecha\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/report/generateAndSaveGraphImage",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"report",
+								"generateAndSaveGraphImage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
