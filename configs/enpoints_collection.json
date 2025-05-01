@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6f013043-a856-406a-8478-193eec15d2a9",
+		"_postman_id": "ce6ce512-4b7c-4c45-b506-ebe4ad66e59e",
 		"name": "Gestor de Ventas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37641996"
+		"_exporter_id": "37641954"
 	},
 	"item": [
 		{
@@ -456,7 +456,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzIzMTAsImV4cCI6MTc0NTk3NTkxMH0.mC24yXNz1HyiM0hBluCB5mhfGqgKn7Z_ROQ2_bnQLJg",
 									"type": "string"
 								}
 							]
@@ -465,7 +465,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n     \"name\": \"Croissants de Mantequilla\",\r\n    \"description\": \"Deliciosos croissants de mantequilla recién horneados.\",\r\n    \"price\": 12.00,\r\n    \"stock\": 80,\r\n    \"category\": \"634b4d9fc3a5f35c9f8f83ea\",\r\n    \"brand\": \"Pastelería Los Andes\"\r\n}",
+							"raw": "{\r\n     \"name\": \"Croissants de Mantequilla\",\r\n    \"description\": \"Deliciosos croissants de mantequilla recién horneados.\",\r\n    \"price\": 12.00,\r\n    \"brand\": \"Pastelería Los Andes\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -692,6 +692,57 @@
 					"response": []
 				},
 				{
+					"name": "Venta de Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"issueNum\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/issueProduct/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"issueProduct",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "68116cc0666d5c6630001d2e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Eliminar Producto",
 					"request": {
 						"auth": {
@@ -745,17 +796,17 @@
 			]
 		},
 		{
-			"name": "Category",
+			"name": "Proveedores",
 			"item": [
 				{
-					"name": "Registrar Categoria",
+					"name": "Crear Proveedor",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzIzMTAsImV4cCI6MTc0NTk3NTkxMH0.mC24yXNz1HyiM0hBluCB5mhfGqgKn7Z_ROQ2_bnQLJg",
 									"type": "string"
 								}
 							]
@@ -764,7 +815,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Panadería\",\r\n    \"description\": \"Pan, bollería, galletas y otros productos de panadería.\"\r\n}\r\n",
+							"raw": "{\r\n  \"name\": \"Proveedor Ejemplo\",\r\n  \"company\": \"Compañía Ejemplo\",\r\n  \"email\": \"proveedor@ejemplo.com\",\r\n  \"phone\": \"123456789\",\r\n  \"address\": \"Calle Ejemplo #123, Ciudad Ejemplo\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -772,7 +823,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/category/registerCategory",
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/createProveedor",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -784,21 +835,103 @@
 							"path": [
 								"salesManager",
 								"v1",
-								"category",
-								"registerCategory"
+								"proveedores",
+								"createProveedor"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Agregar Producto a Categoria",
+					"name": "Buscar Proveedores",
 					"request": {
-						"method": "POST",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/getProveedores",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"getProveedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Proveedores por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores//getProveedorById/680eda93fe7988a868c7513a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"",
+								"getProveedorById",
+								"680eda93fe7988a868c7513a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productUid\": \"67c78980501ddaffb94ebda3\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Proveedor Actualizado\",\r\n  \"email\": \"nuevoemail@ejemplo.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -806,7 +939,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/category/addProductToCategory/:uid",
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/updateProveedor/680eda93fe7988a868c7513a",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -818,36 +951,31 @@
 							"path": [
 								"salesManager",
 								"v1",
-								"category",
-								"addProductToCategory",
-								":uid"
-							],
-							"variable": [
-								{
-									"key": "uid",
-									"value": "67c78871501ddaffb94ebd95"
-								}
+								"proveedores",
+								"updateProveedor",
+								"680eda93fe7988a868c7513a"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Actualizar Categoria",
+					"name": "New Request",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"meat\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/category/updateCategory/:uid",
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/deleteProveedor/680eda93fe7988a868c7513a",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -859,56 +987,9 @@
 							"path": [
 								"salesManager",
 								"v1",
-								"category",
-								"updateCategory",
-								":uid"
-							],
-							"variable": [
-								{
-									"key": "uid",
-									"value": "67ad5ce1e7ad839253f0468c"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Eliminar Categoria",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/category/deleteCategory/:uid",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3005",
-							"path": [
-								"salesManager",
-								"v1",
-								"category",
-								"deleteCategory",
-								":uid"
-							],
-							"variable": [
-								{
-									"key": "uid",
-									"value": "67c78871501ddaffb94ebd95"
-								}
+								"proveedores",
+								"deleteProveedor",
+								"680eda93fe7988a868c7513a"
 							]
 						}
 					},
@@ -917,66 +998,25 @@
 			]
 		},
 		{
-			"name": "Carrito",
+			"name": "Batch",
 			"item": [
 				{
-					"name": "Crear Carrito",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"products\": [6182,6182,8437,4781,4543,4543,4543],\r\n    \"user\": \"67c78348b5b16b80aa204a23\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/buyCart/registerBuyCart",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3005",
-							"path": [
-								"salesManager",
-								"v1",
-								"buyCart",
-								"registerBuyCart"
-							]
-						}
+					"name": "Listar Lote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
 					},
-					"response": []
-				},
-				{
-					"name": "Pagar Carrito",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDEyMDk5ODgsImV4cCI6MTc0MTIxMzU4OH0.59ga406zNG6ZF2UnvkJEDG5XBM1g2zkQRVBetNYnr3I",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
 									"type": "string"
 								}
 							]
 						},
-						"method": "PATCH",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -988,7 +1028,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/buyCart/payCart/:uid",
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/getBatch",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1000,38 +1040,31 @@
 							"path": [
 								"salesManager",
 								"v1",
-								"buyCart",
-								"payCart",
-								":uid"
-							],
-							"variable": [
-								{
-									"key": "uid",
-									"value": "67c78c28501ddaffb94ebe0c"
-								}
+								"batch",
+								"getBatch"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Editar Carrito",
+					"name": "Registrar Lote",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MGZkNmFkYTBmNzI1ZTFhMmY0NTEiLCJpYXQiOjE3NDEwNDIxODYsImV4cCI6MTc0MTA0NTc4Nn0.nb110rcqJqSMfHLMDql13Jk-Or6FtxlZHEH0IMP0EM8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzYxMTIsImV4cCI6MTc0NTk3OTcxMn0.VxROaUaTDHGk_ACcrGH8R2zG9321S83ATW_IjIWbry4",
 									"type": "string"
 								}
 							]
 						},
-						"method": "PATCH",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"deleteProduct\": [1926],\r\n    \"addproduct\": [1926]\r\n}",
+							"raw": "{\r\n    \"noBatch\": \"1\",\r\n    \"type\": \"prueba\",\r\n    \"stockEntry\": 80,\r\n    \"product\": \"68116cc0666d5c6630001d2e\",\r\n    \"proveedor\": \"68116cd1666d5c6630001d32\",\r\n    \"dateOfEntry\": \"2025-02-02\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1039,7 +1072,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/buyCart/editCart/:uid",
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/createBatch",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1051,46 +1084,75 @@
 							"path": [
 								"salesManager",
 								"v1",
-								"buyCart",
-								"editCart",
-								":uid"
-							],
-							"variable": [
-								{
-									"key": "uid",
-									"value": "67c62702167fa3fddd030aff"
-								}
+								"batch",
+								"createBatch"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Eliminar Carrito",
+					"name": "Editar Lote",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MGZkNmFkYTBmNzI1ZTFhMmY0NTEiLCJpYXQiOjE3NDEwNDIxODYsImV4cCI6MTc0MTA0NTc4Nn0.nb110rcqJqSMfHLMDql13Jk-Or6FtxlZHEH0IMP0EM8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noBatch\": \"2\",\r\n    \"type\": \"pruebaUpdateada\",\r\n    \"product\": \"680f8e1fdeb74698dc94d152\",\r\n    \"proveedor\": \"680f8e2bdeb74698dc94d156\",\r\n    \"dateOfEntry\": \"2025-10-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/updateBatch/680f94178ddd9335326c8bf3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"updateBatch",
+								"680f94178ddd9335326c8bf3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Lote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmOGUwNGRlYjc0Njk4ZGM5NGQxNGUiLCJpYXQiOjE3NDU4NDk4NzUsImV4cCI6MTc0NTg1MzQ3NX0._6cJpsoxTQE_-chmRQDlL-HqzX2OcYytBUZQposdNjk",
 									"type": "string"
 								}
 							]
 						},
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"deleteProduct\": [1926],\r\n    \"addproduct\": [1926]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/buyCart/deleteCart/:uid",
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/deleteBatch/680f94178ddd9335326c8bf3",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1102,15 +1164,140 @@
 							"path": [
 								"salesManager",
 								"v1",
-								"buyCart",
-								"deleteCart",
-								":uid"
-							],
-							"variable": [
+								"batch",
+								"deleteBatch",
+								"680f94178ddd9335326c8bf3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Generar reporte de inventario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "uid",
-									"value": "67c62702167fa3fddd030aff"
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+									"type": "string"
 								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/report/generateInventoryReport",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"report",
+								"generateInventoryReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar reporte de movimientos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2025-04-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/report/generateInventoryMovementsReport",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"report",
+								"generateInventoryMovementsReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar graficas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actividadPorFecha\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/report/generateAndSaveGraphImage",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"report",
+								"generateAndSaveGraphImage"
 							]
 						}
 					},
