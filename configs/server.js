@@ -22,7 +22,9 @@ const __dirname = path.dirname(__filename);
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
-    app.use(helmet());
+    app.use(helmet({
+        crossOriginResourcePolicy: false
+    }));
     app.use(cors({
         origin: true,
         credentials: true
