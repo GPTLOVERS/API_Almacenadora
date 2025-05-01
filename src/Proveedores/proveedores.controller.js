@@ -47,7 +47,6 @@ export const getProveedores = async (req, res) => {
     }
 };
 
-// Nueva función para obtener un proveedor por ID
 export const getProveedorById = async (req, res) => {
     try {
         const { id } = req.params;

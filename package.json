@@ -26,8 +26,12 @@
   "homepage": "https://github.com/Zodiacal0/Proyecto_Final#readme",
   "dependencies": {
     "argon2": "^0.41.1",
+    "canvas": "^3.1.0",
+    "chart.js": "^4.4.9",
+    "chartjs-node-canvas": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
     "express-validator": "^7.2.1",
