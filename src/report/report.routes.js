@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { generateInventoryReport, generateInventoryMovementsReport, generateAndSaveGraphImage } from "./report.controller.js";
+import { getLatestInventoryReport, getLatestMovementReport , generateInventoryReport, generateInventoryMovementsReport, generateAndSaveGraphImage } from "./report.controller.js";
 import { generateInventoryReportValidator, generateInventoryMovementsReportValidator, generateAndSaveGraphImageValidator } from "../middlewares/report-validator.js";
 
 const router = Router();
@@ -87,6 +87,24 @@ router.post("/generateInventoryMovementsReport", generateInventoryMovementsRepor
  *       500:
  *         description: Error al generar la imagen
  */
-router.get("/generateAndSaveGraphImage", generateAndSaveGraphImageValidator, generateAndSaveGraphImage);
+router.post("/generateAndSaveGraphImage", generateAndSaveGraphImageValidator, generateAndSaveGraphImage);
+
+/**
+ * @swagger
+ * /getLatestInventoryReport:
+ *   get:
+ *     summary: Descargar el último reporte de inventario
+ *     description: Redirige al archivo Excel más reciente generado del inventario.
+ *     tags:
+ *       - Reportes
+ *     responses:
+ *       302:
+ *         description: Redirección al archivo descargable
+ *       404:
+ *         description: No hay reportes disponibles
+ */
+router.get("/getLatestInventoryReport", getLatestInventoryReport);
+
+router.get("/getLatestMovementReport", getLatestMovementReport);
 
 export default router;

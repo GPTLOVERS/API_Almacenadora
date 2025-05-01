@@ -73,7 +73,8 @@ export const generateInventoryReport = async (req, res) => {
             message: 'Reporte de inventario generado con éxito',
             data: {
                 totalProducts: products.length,
-                filePath: `/docs/reports/${fileName}`
+                filePath: `/docs/reports/${fileName}`,
+                url: "http://127.0.0.1:3005/salesManager/v1/report/getLatestInventoryReport"
             }
         });
 
@@ -168,7 +169,8 @@ export const generateInventoryMovementsReport = async (req, res) => {
             success: true,
             message: "Inventory movements report generated successfully",
             data: {
-                filePath: `/docs/reports/${fileName}`
+                filePath: `/docs/reports/${fileName}`,
+                url: "http://127.0.0.1:3005/salesManager/v1/report/getLatestMovementReport"
             }
         });
 
@@ -376,7 +378,8 @@ export const generateAndSaveGraphImage = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Gráfica generada y reemplazada correctamente",
-            imageUrl: `/grafics/${fileName}`
+            imageUrl: `/grafics/${fileName}`,
+            imgsv: `http://localhost:3005/grafics/${fileName}`
         });
 
     } catch (err) {
@@ -386,4 +389,53 @@ export const generateAndSaveGraphImage = async (req, res) => {
             error: err.message
         });
     }
+};
+
+export const getLatestInventoryReport = (req, res) => {
+    const dirPath = path.join(process.cwd(), 'public/docs/reports');
+    fs.readdir(dirPath, (err, files) => {
+        if (err || !files.length) {
+            return res.status(404).json({ success: false, message: 'No hay reportes disponibles' });
+        }
+
+        const inventoryReports = files
+            .filter(name => name.startsWith('inventory_report_') && name.endsWith('.xlsx'))
+            .map(name => ({
+                name,
+                time: fs.statSync(path.join(dirPath, name)).mtime.getTime()
+            }))
+            .sort((a, b) => b.time - a.time);
+
+        if (!inventoryReports.length) {
+            return res.status(404).json({ success: false, message: 'No hay reportes de inventario' });
+        }
+
+        const latest = inventoryReports[0].name;
+        return res.redirect(`/docs/reports/${latest}`);
+    });
+};
+
+export const getLatestMovementReport = (req, res) => {
+    const dirPath = path.join(process.cwd(), 'public/docs/reports');
+    fs.readdir(dirPath, (err, files) => {
+        if (err || !files.length) {
+            return res.status(404).json({ success: false, message: 'No hay reportes disponibles' });
+        }
+
+        const movementReports = files
+            .filter(name => name.startsWith('inventory_movements_') && name.endsWith('.xlsx'))
+            .map(name => ({
+                name,
+                time: fs.statSync(path.join(dirPath, name)).mtime.getTime()
+            }))
+            .sort((a, b) => b.time - a.time);
+
+        if (!movementReports.length) {
+            return res.status(404).json({ success: false, message: 'No hay reportes de movimientos de inventario' });
+        }
+
+        const latest = movementReports[0].name;
+        const filePath = path.join(dirPath, latest);
+        return res.download(filePath);
+    });
 };

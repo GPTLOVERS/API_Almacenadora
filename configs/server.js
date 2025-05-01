@@ -22,7 +22,9 @@ const __dirname = path.dirname(__filename);
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
-    app.use(helmet());
+    app.use(helmet({
+        crossOriginResourcePolicy: false
+    }));
     app.use(cors({
         origin: true,
         credentials: true
@@ -37,6 +39,8 @@ const routes = (app) => {
     app.use("/salesManager/v1/proveedores", proveedoresRoutes);
     app.use("/salesManager/v1/batch", batchRoutes);
     app.use("/salesManager/v1/report", reportRoutes);
+    app.use("/docs/reports/", express.static(path.join(process.cwd(), "public", "docs", "reports")));
+    app.use('/grafics', express.static(path.join(__dirname, '../public/grafics')));
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 };
 
@@ -53,7 +57,6 @@ export const initServer = () => {
     const timeInit = Date.now();
     try {
         middlewares(app);
-        app.use('/grafics', express.static(path.join(__dirname, '../public/grafics')));
         connectionMongo();
         routes(app);
         app.listen(process.env.PORT);
