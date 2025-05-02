@@ -1,4 +1,3 @@
-import Batch from "../batch/Batch.model.js"
 import { body, param } from "express-validator"
 import { catchErrors } from "./catch-errors.js"
 import { validationsFields } from "./fields-validator.js"
@@ -40,4 +39,12 @@ export const deleteBatchValidator = [
     validationsFields,
     catchErrors
 
+]
+
+export const getBatchByIdValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    param("uid").isMongoId().withMessage("UID isnt valid").notEmpty().withMessage("UID is required").custom(batchExist),
+    validationsFields,
+    catchErrors
 ]

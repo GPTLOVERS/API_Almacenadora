@@ -55,8 +55,8 @@ export const getProveedorById = async (req, res) => {
         if (!proveedor) {
             return res.status(404).json({
                 success: false,
-                message: "Proveedor no encontrado",
-            });
+                        message: "Proveedor no encontrado",
+                    });
         }
 
         return res.status(200).json({

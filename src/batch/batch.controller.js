@@ -88,3 +88,28 @@ export const deleteBatch = async (req, res) => {
         })
     }
 }
+
+export const getBatchById = async (req, res) => {
+    try{
+        const { uid } = req.params;
+        const batch = await Batch.findById(uid)
+        
+        if(!batch){
+            return res.status(404).json({
+                success: false,
+                message: "Lote no encontrado.",
+            })
+        }
+        
+        return res.status(200).json({
+            success: true,
+            batch,
+        })
+    } catch(err){
+        return res.status(500).json({
+            success: false,
+            message: "Error al obtener el proveedor",
+            error: err.message
+        })
+    }
+}

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { createBatch, deleteBatch, listBatches, updateBatch } from "./batch.controller.js";
-import { createBatchValidator, deleteBatchValidator, listBatchValidator, updateBatchValidator } from "../middlewares/batch-validator.js";
+import { createBatch, deleteBatch, getBatchById, listBatches, updateBatch } from "./batch.controller.js";
+import { createBatchValidator, deleteBatchValidator, getBatchByIdValidator, listBatchValidator, updateBatchValidator } from "../middlewares/batch-validator.js";
 
 const router = Router();
 
@@ -103,5 +103,26 @@ router.put("/updateBatch/:uid", updateBatchValidator, updateBatch)
  */
 
 router.delete("/deleteBatch/:uid", deleteBatchValidator, deleteBatch)
+
+/**
+ * @swagger
+ * /getBatchById/{uid}:
+ *   get:
+ *     summary: Get a batch by its unique identifier.
+ *     tags: [Batch]
+ *     parameters:
+ *       - in: path
+ *         name: uid
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Unique identifier of the batch.
+ *     responses:
+ *       200:
+ *         description: Batch retrieved successfully.
+ *       404:
+ *         description: Batch not found.
+ */
+router.get("/getBatchById/:uid", getBatchByIdValidator, getBatchById)
 
 export default router;
