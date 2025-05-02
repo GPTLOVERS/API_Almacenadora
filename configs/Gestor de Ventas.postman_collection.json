@@ -1,9 +1,16 @@
 {
 	"info": {
+<<<<<<< HEAD:configs/enpoints_collection.json
+		"_postman_id": "ce6ce512-4b7c-4c45-b506-ebe4ad66e59e",
+		"name": "Gestor de Ventas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37641954"
+=======
 		"_postman_id": "57e52b0b-e33f-4596-975e-9213c5d0ed78",
 		"name": "Gestor de Ventas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "38544176"
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 	},
 	"item": [
 		{
@@ -808,31 +815,30 @@
 				},
 				{
 					"name": "Buscar Proveedores",
+<<<<<<< HEAD:configs/enpoints_collection.json
+=======
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
+<<<<<<< HEAD:configs/enpoints_collection.json
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+=======
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYwNzEzMzMsImV4cCI6MTc0NjA3NDkzM30.Yzp-GuoxYrSiFco76aBf4nrlBsLgJ2hrS260Bk0Ylt0",
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
+<<<<<<< HEAD:configs/enpoints_collection.json
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/getProveedores",
 							"protocol": "http",
@@ -847,6 +853,101 @@
 								"salesManager",
 								"v1",
 								"proveedores",
+								"getProveedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Proveedores por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores//getProveedorById/680eda93fe7988a868c7513a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+								"",
+								"getProveedorById",
+								"680eda93fe7988a868c7513a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Proveedor Actualizado\",\r\n  \"email\": \"nuevoemail@ejemplo.com\"\r\n}",
+=======
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+<<<<<<< HEAD:configs/enpoints_collection.json
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/updateProveedor/680eda93fe7988a868c7513a",
+=======
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/getProveedores",
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"proveedores",
+<<<<<<< HEAD:configs/enpoints_collection.json
+								"updateProveedor",
+								"680eda93fe7988a868c7513a"
+=======
 								"getProveedores"
 							]
 						}
@@ -890,24 +991,39 @@
 									"key": "id",
 									"value": "68116cd1666d5c6630001d32"
 								}
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 							]
 						}
 					},
 					"response": []
 				},
 				{
+<<<<<<< HEAD:configs/enpoints_collection.json
+					"name": "New Request",
+=======
 					"name": "Editar Proveedor",
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
+<<<<<<< HEAD:configs/enpoints_collection.json
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
+=======
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYwNjM0OTEsImV4cCI6MTc0NjA2NzA5MX0.y6IfygHFCzzAkXv7P8fcav5JB3hjLsDVrK6vsJ4ANpg",
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 									"type": "string"
 								}
 							]
 						},
+<<<<<<< HEAD:configs/enpoints_collection.json
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/deleteProveedor/680eda93fe7988a868c7513a",
+=======
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -921,6 +1037,7 @@
 						},
 						"url": {
 							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/updateProveedor/:id",
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 							"protocol": "http",
 							"host": [
 								"127",
@@ -933,6 +1050,8 @@
 								"salesManager",
 								"v1",
 								"proveedores",
+<<<<<<< HEAD:configs/enpoints_collection.json
+=======
 								"updateProveedor",
 								":id"
 							],
@@ -984,6 +1103,7 @@
 								"salesManager",
 								"v1",
 								"proveedores",
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 								"deleteProveedor",
 								"680eda93fe7988a868c7513a"
 							]
@@ -1263,7 +1383,11 @@
 							"bearer": [
 								{
 									"key": "token",
+<<<<<<< HEAD:configs/enpoints_collection.json
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+=======
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjE4MDksImV4cCI6MTc0NjEyNTQwOX0.PA6o_Vx5rpzPLtMITklEAZ8zmoPuYAaYiaq2C_o7jKI",
+>>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 									"type": "string"
 								}
 							]

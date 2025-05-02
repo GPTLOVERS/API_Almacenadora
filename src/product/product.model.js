@@ -28,6 +28,10 @@ const productSchema = new Schema({
         type: Number,
         default: 0
     },
+    category:{
+        type: String,
+        required: [true, "Category is required"]
+    },
     receipts: [{
         type: String,
         default: []

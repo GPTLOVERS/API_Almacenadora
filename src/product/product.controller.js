@@ -168,5 +168,37 @@ export const issueProduct = async (req, res) => {
     }
 };
 
-
+export const filterProduct = async (req, res) => {
+    try {
+      const { name, popular, price, category } = req.body;
+      const filter = {};
+  
+      if (name) {
+        filter.name = new RegExp(`${name}`, 'i'); 
+      }
+  
+      if (category) {
+        filter.category = category; 
+      }
+  
+      let query = Product.find(filter);
+  
+      if (popular === 'true') {
+        query = query.sort({ popularity: -1 }).limit(10);
+      }
+  
+      if (!popular) {
+        if (price === 'desc') {
+          query = query.sort({ price: -1 });
+        } else if (price === 'asc') {
+          query = query.sort({ price: 1 });
+        }
+      }
+  
+      const products = await query.exec();
+      res.json({ success: true, products });
+    } catch (error) {
+      res.status(500).json({ success: false, message: 'Error al filtrar productos', error });
+    }
+  };
 
