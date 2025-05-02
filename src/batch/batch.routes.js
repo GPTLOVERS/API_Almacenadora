@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { createBatch, deleteBatch, listBatches, updateBatch } from "./batch.controller.js";
-import { createBatchValidator, deleteBatchValidator, listBatchValidator, updateBatchValidator } from "../middlewares/batch-validator.js";
+import { getBatchById,createBatch, deleteBatch, listBatches, updateBatch } from "./batch.controller.js";
+import { findBatchByIdValidator,createBatchValidator, deleteBatchValidator, listBatchValidator, updateBatchValidator } from "../middlewares/batch-validator.js";
 
 const router = Router();
 
@@ -103,5 +103,8 @@ router.put("/updateBatch/:uid", updateBatchValidator, updateBatch)
  */
 
 router.delete("/deleteBatch/:uid", deleteBatchValidator, deleteBatch)
+
+router.get("/findBatch/:uid",findBatchByIdValidator, getBatchById)
+
 
 export default router;
