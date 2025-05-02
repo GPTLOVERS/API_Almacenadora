@@ -7,19 +7,12 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import { connectionDB } from "./mongo.js";
-<<<<<<< HEAD
-import authRoutes from "../src/Auth/auth.routes.js"
-import userRoutes from "../src/user/user.routes.js"
-import productRoutes from "../src/product/product.routes.js"
-import reportRoutes from "../src/report/report.routes.js"
-=======
 import authRoutes from "../src/Auth/auth.routes.js";
 import userRoutes from "../src/user/user.routes.js";
 import productRoutes from "../src/product/product.routes.js";
 import proveedoresRoutes from "../src/Proveedores/proveedores.routes.js";
 import batchRoutes from "../src/batch/batch.routes.js";
 import reportRoutes from "../src/report/report.routes.js";
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823
 import { userSeeder } from "../src/seeders/user.seeder.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
 
@@ -43,13 +36,6 @@ const routes = (app) => {
     app.use("/salesManager/v1/auth", authRoutes);
     app.use("/salesManager/v1/user", userRoutes);
     app.use("/salesManager/v1/product", productRoutes);
-<<<<<<< HEAD
-    app.use("/salesManager/v1/report", reportRoutes);
-    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
-}
-const connectionMongo = async() =>{
-    try{
-=======
     app.use("/salesManager/v1/proveedores", proveedoresRoutes);
     app.use("/salesManager/v1/batch", batchRoutes);
     app.use("/salesManager/v1/report", reportRoutes);
@@ -60,7 +46,6 @@ const connectionMongo = async() =>{
 
 const connectionMongo = async () => {
     try {
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823
         await connectionDB();
     } catch (error) {
         console.log(`Data Base connection failed: ${error}`);

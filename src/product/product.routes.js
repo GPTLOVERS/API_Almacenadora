@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { registerProduct , listProduct, updateProduct, deleteProduct, findProduct, popularityProduct, issueProduct} from "./product.controller.js";
-import { registerProductValidator, updateProductValidator, deleteProductValidator , findProductValidator} from "../middlewares/product-validator.js";
+import { registerProduct , listProduct, updateProduct, deleteProduct, findProduct, popularityProduct, issueProduct, filterProduct} from "./product.controller.js";
+import { registerProductValidator, updateProductValidator, deleteProductValidator , findProductValidator, filterProductValidator} from "../middlewares/product-validator.js";
 import { hasRoles } from "../middlewares/validate-role.js";
 
 const router = Router();
@@ -143,6 +143,12 @@ router.get(
 router.patch(
     "/issueProduct/:uid",
     issueProduct
+)
+
+router.get(
+    "/filterProduct",
+    filterProductValidator,
+    filterProduct
 )
 
 export default router;
