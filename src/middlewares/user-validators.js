@@ -1,7 +1,6 @@
 import { body , param , check} from "express-validator";
 import { emailExist, userNameExist , uidExist } from "../helpers/db-validators.js";
 import { validationsFields } from "./fields-validator.js";
-import { deleteFileOnError } from "./delete-file-on-error.js";
 import { catchErrors } from "./catch-errors.js";
 import { validateJWT } from "./validate-token.js";
 import { hasRoles } from "./validate-role.js";
@@ -18,7 +17,6 @@ export const registerValidator = [
         minSymbols: 1
     }).withMessage("The password must be more strong"),
     validationsFields,
-    deleteFileOnError,
     catchErrors
 ];
 

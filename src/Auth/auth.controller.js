@@ -1,22 +1,29 @@
 import { hash , verify } from "argon2";
 import User from "../user/user.model.js";
 import { generateJWT } from "../helpers/generate-jwr.js";
+import jwt from "jsonwebtoken"
 
 export const register = async(req,res) =>{
     try{
         const data = req.body
-
-        let profilePicture = req.file ? req.file.filename : null;
         const encryptedPass = await hash(data.password);
         data.password = encryptedPass;
-        data.profilePicture = profilePicture;
         const user = await User.create(data)
+
+        const token = jwt.sign(
+            { id: user.id, email: user.email, role: user.role },
+            'SECRET_OR_PRIVATE_KEY',
+            { expiresIn: '1h' }
+        );
 
         return res.status(201).json({
             message: "User has been created",
-            name: user.name,
-            email: user.email,
-            role: user.role
+            userDetails: {
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                token: token 
+            }
         })
     }catch(error){
         return res.status(500).json({
@@ -58,7 +65,7 @@ export const login = async(req,res) =>{
             message: "Login succeful",
             userDetails: {
                 token: token,
-                profilePicture: user.profilePicture
+                role: user.role
             }
         })
 

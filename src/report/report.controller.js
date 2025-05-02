@@ -1,11 +1,11 @@
 import Product from "../product/product.model.js"
 import ExcelJS from "exceljs"
-import {ChartJSNodeCanvas} from "chartjs-node-canvas"
+import { ChartJSNodeCanvas } from "chartjs-node-canvas"
 import path from "path"
 import { fileURLToPath } from "url"
 import { dirname } from "path"
 import fs from "fs"
- 
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -14,12 +14,12 @@ const height = 400;
 const chartJSNodeCanvas = new ChartJSNodeCanvas({
     width,
     height,
-    backgroundColour: "white" 
+    backgroundColour: "white"
 });
- 
+
 export const generateInventoryReport = async (req, res) => {
     try {
-        const products = await Product.find({ status: true }).select('name description price stock');
+        const products = await Product.find({}).select('name description price stock popularity receipts issues batch');
 
         if (!products || products.length === 0) {
             return res.status(404).json({
@@ -37,7 +37,11 @@ export const generateInventoryReport = async (req, res) => {
             { header: 'Description', key: 'description', width: 40 },
             { header: 'Unit Price', key: 'price', width: 15, style: { numFmt: '"$"#,##0.00' } },
             { header: 'Stock', key: 'stock', width: 10 },
-            { header: 'Total Value', key: 'totalValue', width: 15, style: { numFmt: '"$"#,##0.00' } }
+            { header: 'Total Value', key: 'totalValue', width: 15, style: { numFmt: '"$"#,##0.00' } },
+            { header: 'Popularity', key: 'popularity', width: 15 },
+            { header: 'Receipts', key: 'receipts', width: 30 },
+            { header: 'Issues', key: 'issues', width: 30 },
+            { header: 'Batch', key: 'batch', width: 30 }
         ];
 
         products.forEach(product => {
@@ -49,7 +53,11 @@ export const generateInventoryReport = async (req, res) => {
                 description: product.description,
                 price: product.price,
                 stock: product.stock,
-                totalValue: productValue
+                totalValue: productValue,
+                popularity: product.popularity || 0,
+                receipts: (product.receipts || []).map(d => new Date(d).toISOString().split('T')[0]).join(', '),
+                issues: (product.issues || []).map(d => new Date(d).toISOString().split('T')[0]).join(', '),
+                batch: product.batch && product.batch.length > 0 ? product.batch.join(', ') : "Sin lote"
             });
         });
 
@@ -65,7 +73,8 @@ export const generateInventoryReport = async (req, res) => {
             message: 'Reporte de inventario generado con éxito',
             data: {
                 totalProducts: products.length,
-                filePath: `/docs/reports/${fileName}`
+                filePath: `/docs/reports/${fileName}`,
+                url: "http://127.0.0.1:3005/salesManager/v1/report/getLatestInventoryReport"
             }
         });
 
@@ -160,7 +169,8 @@ export const generateInventoryMovementsReport = async (req, res) => {
             success: true,
             message: "Inventory movements report generated successfully",
             data: {
-                filePath: `/docs/reports/${fileName}`
+                filePath: `/docs/reports/${fileName}`,
+                url: "http://127.0.0.1:3005/salesManager/v1/report/getLatestMovementReport"
             }
         });
 
@@ -274,6 +284,9 @@ export const generateAndSaveGraphImage = async (req, res) => {
                 product.issues ? product.issues.length : 0
             );
 
+            const popularidad = products.map(product => product.popularity || 0);
+
+
             configuration = {
                 type: 'bar',
                 data: {
@@ -293,6 +306,15 @@ export const generateAndSaveGraphImage = async (req, res) => {
                             data: salidas,
                             backgroundColor: 'rgba(255, 159, 64, 0.6)',
                             borderColor: 'rgba(255, 159, 64, 1)',
+                            borderWidth: 1,
+                            barPercentage: 0.4,
+                            categoryPercentage: 0.7
+                        },
+                        {
+                            label: 'Popularidad (Popularity)',
+                            data: popularidad,
+                            backgroundColor: 'rgba(11, 204, 44, 0.6)',
+                            borderColor: 'rgba(11, 204, 44, 0.6)',
                             borderWidth: 1,
                             barPercentage: 0.4,
                             categoryPercentage: 0.7
@@ -356,7 +378,8 @@ export const generateAndSaveGraphImage = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Gráfica generada y reemplazada correctamente",
-            imageUrl: `/grafics/${fileName}`
+            imageUrl: `/grafics/${fileName}`,
+            imgsv: `http://localhost:3005/grafics/${fileName}`
         });
 
     } catch (err) {
@@ -366,4 +389,53 @@ export const generateAndSaveGraphImage = async (req, res) => {
             error: err.message
         });
     }
+};
+
+export const getLatestInventoryReport = (req, res) => {
+    const dirPath = path.join(process.cwd(), 'public/docs/reports');
+    fs.readdir(dirPath, (err, files) => {
+        if (err || !files.length) {
+            return res.status(404).json({ success: false, message: 'No hay reportes disponibles' });
+        }
+
+        const inventoryReports = files
+            .filter(name => name.startsWith('inventory_report_') && name.endsWith('.xlsx'))
+            .map(name => ({
+                name,
+                time: fs.statSync(path.join(dirPath, name)).mtime.getTime()
+            }))
+            .sort((a, b) => b.time - a.time);
+
+        if (!inventoryReports.length) {
+            return res.status(404).json({ success: false, message: 'No hay reportes de inventario' });
+        }
+
+        const latest = inventoryReports[0].name;
+        return res.redirect(`/docs/reports/${latest}`);
+    });
+};
+
+export const getLatestMovementReport = (req, res) => {
+    const dirPath = path.join(process.cwd(), 'public/docs/reports');
+    fs.readdir(dirPath, (err, files) => {
+        if (err || !files.length) {
+            return res.status(404).json({ success: false, message: 'No hay reportes disponibles' });
+        }
+
+        const movementReports = files
+            .filter(name => name.startsWith('inventory_movements_') && name.endsWith('.xlsx'))
+            .map(name => ({
+                name,
+                time: fs.statSync(path.join(dirPath, name)).mtime.getTime()
+            }))
+            .sort((a, b) => b.time - a.time);
+
+        if (!movementReports.length) {
+            return res.status(404).json({ success: false, message: 'No hay reportes de movimientos de inventario' });
+        }
+
+        const latest = movementReports[0].name;
+        const filePath = path.join(dirPath, latest);
+        return res.download(filePath);
+    });
 };

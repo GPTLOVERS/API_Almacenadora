@@ -195,7 +195,7 @@ export const updateUser = async (req, res) => {
             });
         }
 
-        if (userToUpdate.role === "CLIENT_ROLE" && uid === key) {
+        if (userToUpdate.role === "CLIENT_ROLE" && req.usuario.role === "CLIENT_ROLE") {
             return res.status(400).json({
                 success: false,
                 msg: 'Los clientes no pueden actualizar los perfiles de administradores',

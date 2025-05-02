@@ -16,9 +16,6 @@ const userSchema = Schema({
         required: [true, "username is required"],
         unique: true
     },
-    profilePicture:{
-        type: String
-    },
     email: {
         type: String,
         required: [true, "Email is requiered"],
@@ -37,13 +34,9 @@ const userSchema = Schema({
     role: {
         type: String,
         required: true,
-        enum: ["ADMIN_ROLE", "CLIENT_ROLE"],
+        enum: ["ADMIN_ROLE", "CLIENT_ROLE","EMPLOYEE_ROLE"],
         default: "CLIENT_ROLE"
     },
-    history:[{
-        type: Schema.Types.ObjectId,
-        ref: "BuyCart"
-    }],
     status: {
         type: Boolean,
         default: true,
