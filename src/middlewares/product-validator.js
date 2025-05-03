@@ -39,3 +39,10 @@ export const deleteProductValidator = [
     catchErrors
 ]
 
+export const filterProductValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE", "EMPLOYEE_ROLE", "CLIENT_ROLE"),
+    body("name").isString().withMessage("The name must be a string").optional(),
+    body("popular").isBoolean().withMessage("Popular must be true").optional(),
+    body("price").isNumeric().optional()
+]

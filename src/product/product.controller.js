@@ -1,7 +1,7 @@
 import Product from "../product/product.model.js"
 
-export const registerProduct = async(req,res) =>{
-    try{
+export const registerProduct = async (req, res) => {
+    try {
 
         const data = req.body
 
@@ -13,7 +13,7 @@ export const registerProduct = async(req,res) =>{
             message: "Brand has been registred",
             product
         })
-    }catch(error){
+    } catch (error) {
         return res.status(500).json({
             message: "Brand registration failed",
             error: error.message
@@ -21,24 +21,24 @@ export const registerProduct = async(req,res) =>{
     }
 }
 
-export const listProduct = async(req,res) =>{
-    try{
+export const listProduct = async (req, res) => {
+    try {
         const { limite = 5, desde = 0 } = req.query
-                const query = { status: true }
-        
-                const [total, product ] = await Promise.all([
-                    Product.countDocuments(query),
-                    Product.find(query)
-                        .skip(Number(desde))
-                        .limit(Number(limite))
-                ])
-        
-                return res.status(200).json({
-                    success: true,
-                    total,
-                    product
-                })
-    }catch(error){
+        const query = { status: true }
+
+        const [total, product] = await Promise.all([
+            Product.countDocuments(query),
+            Product.find(query)
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ])
+
+        return res.status(200).json({
+            success: true,
+            total,
+            product
+        })
+    } catch (error) {
         return res.status(500).json({
             message: "List product failed",
             error: error.message
@@ -56,10 +56,10 @@ export const findProduct = async (req, res) => {
         }
 
         const [total, product] = await Promise.all([
-            Product.countDocuments(query), 
-            Product.find(query)             
-                .skip(Number(desde))        
-                .limit(Number(limite))      
+            Product.countDocuments(query),
+            Product.find(query)
+                .skip(Number(desde))
+                .limit(Number(limite))
         ]);
 
         return res.status(200).json({
@@ -77,7 +77,7 @@ export const findProduct = async (req, res) => {
 
 export const popularityProduct = async (req, res) => {
     try {
-        const products = await Product.find({}, { name: 1, popularity: 1, _id: 0 })                                     .sort({ popularity: -1 });
+        const products = await Product.find({}, { name: 1, popularity: 1, _id: 0 }).sort({ popularity: -1 });
 
         return res.status(200).json({
             success: true,
@@ -92,20 +92,20 @@ export const popularityProduct = async (req, res) => {
 };
 
 
-export const updateProduct = async(req,res) =>{
-    try{
+export const updateProduct = async (req, res) => {
+    try {
 
         const data = req.body
-        const {uid} = req.params
+        const { uid } = req.params
 
-        const product = await Product.findByIdAndUpdate(uid, data, {new: true})
+        const product = await Product.findByIdAndUpdate(uid, data, { new: true })
 
         return res.status(200).json({
             success: true,
             product
         });
 
-    }catch (error) {
+    } catch (error) {
         return res.status(500).json({
             message: "Update product failed",
             error: error.message
@@ -113,19 +113,19 @@ export const updateProduct = async(req,res) =>{
     }
 }
 
-export const deleteProduct = async(req,res) =>{
-    try{
+export const deleteProduct = async (req, res) => {
+    try {
 
-        const {uid} = req.params
+        const { uid } = req.params
 
-        await Product.findByIdAndUpdate(uid, {status: false}, {new: true})
+        await Product.findByIdAndUpdate(uid, { status: false }, { new: true })
 
         return res.status(200).json({
             success: true,
             message: "Product deleted"
         });
 
-    }catch (error) {
+    } catch (error) {
         return res.status(500).json({
             message: "Update product failed",
             error: error.message
@@ -136,7 +136,7 @@ export const deleteProduct = async(req,res) =>{
 export const issueProduct = async (req, res) => {
     try {
         const { uid } = req.params;
-        const {issueNum} = req.body;
+        const { issueNum } = req.body;
         const product = await Product.findById(uid);
 
         if (!product) {
@@ -151,7 +151,7 @@ export const issueProduct = async (req, res) => {
 
         const now = new Date();
 
-        const updatedProduct = await Product.findByIdAndUpdate(uid, {$inc: { stock: -issueNum, popularity: +issueNum },$push: { issues: now },}, { new: true });
+        const updatedProduct = await Product.findByIdAndUpdate(uid, { $inc: { stock: -issueNum, popularity: +issueNum }, $push: { issues: now }, }, { new: true });
 
         return res.status(200).json({
             success: true,
@@ -168,5 +168,38 @@ export const issueProduct = async (req, res) => {
     }
 };
 
+export const filterProduct = async (req, res) => {
+    try {
+        const { name, popular, price, category, receipts } = req.body;
+        const filter = {};
 
+        if (name) {
+            filter.name = new RegExp(`${name}`, 'i');
+        }
+
+        if (category) {
+            filter.category = category;
+        }
+
+        if (receipts) {
+            filter.receipts = receipts;
+        }
+
+        let sort = {};
+
+        if (popular === 'true') {
+            sort.popularity = -1;
+        } else if (price === 'desc') {
+            sort.price = -1;
+        } else if (price === 'asc') {
+            sort.price = 1;
+        }
+
+        const products = await Product.find(filter).sort(sort).limit(popular === 'true' ? 10 : 0);
+
+        res.json({ success: true, products });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Error al filtrar productos', error });
+    }
+};
 

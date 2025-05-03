@@ -420,7 +420,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzIzMTAsImV4cCI6MTc0NTk3NTkxMH0.mC24yXNz1HyiM0hBluCB5mhfGqgKn7Z_ROQ2_bnQLJg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxNTU1MzQsImV4cCI6MTc0NjE1OTEzNH0.XcT5G8h0_bVJtiyfin0Bf9DlAGR_bfr_rHSae7lAR5k",
 									"type": "string"
 								}
 							]
@@ -429,7 +429,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n     \"name\": \"Croissants de Mantequilla\",\r\n    \"description\": \"Deliciosos croissants de mantequilla recién horneados.\",\r\n    \"price\": 12.00,\r\n    \"brand\": \"Pastelería Los Andes\"\r\n}",
+							"raw": "{\r\n     \"name\": \"Croissants de Mantequille\",\r\n    \"description\": \"Deliciosos croissants de mantequilla recién horneados.\",\r\n    \"price\": 12.00,\r\n    \"brand\": \"Pastelería Los Andes\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -605,6 +605,53 @@
 					"response": []
 				},
 				{
+					"name": "Filtrar producto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0ZGI3MzYzOTFjNjU0ZGJmY2U1ZGUiLCJpYXQiOjE3NDYyMDEzODIsImV4cCI6MTc0NjIwNDk4Mn0.3uzPjIQRc81QjVDXObr40wjhlKEDSxgBSobhCgI-Ang",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receipts\": \"2025-04-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/filterProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"filterProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Actualizar Producto",
 					"request": {
 						"auth": {
@@ -621,7 +668,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Queso Rayado\",\r\n    \"description\": \"que en rallas\",\r\n    \"price\": 25.00,\r\n    \"stock\": 5,\r\n    \"brand\": \"Palma\",\r\n    \"category\": \"67b14aec70945fe2dc5ad883\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Queso Rayado\",\r\n    \"description\": \"que en rallas\",\r\n    \"price\": 25.00,\r\n    \"stock\": 5,\r\n    \"brand\": \"Palma\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -770,7 +817,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzIzMTAsImV4cCI6MTc0NTk3NTkxMH0.mC24yXNz1HyiM0hBluCB5mhfGqgKn7Z_ROQ2_bnQLJg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMzg2NDQsImV4cCI6MTc0NjE0MjI0NH0.Jug385VKQZ6zt66pqbE9vSVnXad_IvqYcCv6ILMXWrg",
 									"type": "string"
 								}
 							]
@@ -861,7 +908,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjE4MDksImV4cCI6MTc0NjEyNTQwOX0.PA6o_Vx5rpzPLtMITklEAZ8zmoPuYAaYiaq2C_o7jKI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMzg2NDQsImV4cCI6MTc0NjE0MjI0NH0.Jug385VKQZ6zt66pqbE9vSVnXad_IvqYcCv6ILMXWrg",
 									"type": "string"
 								}
 							]
@@ -1044,6 +1091,60 @@
 					"response": []
 				},
 				{
+					"name": "Buscar Lote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxNTAxMDIsImV4cCI6MTc0NjE1MzcwMn0.-X2PValQPpWMAAEhx-aeIogYgxk7vUmhVUp5H5XPwuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/findBatch/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"findBatch",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "68117b41326f144ddb076327"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Registrar Lote",
 					"request": {
 						"auth": {
@@ -1181,7 +1282,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjczODUsImV4cCI6MTc0NjEzMDk4NX0.vz3WL65lNBQRctKa_t8rkSnPNhxyriYYZg8az1ATYJ0",
 									"type": "string"
 								}
 							]
@@ -1216,7 +1317,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMzE2OTIsImV4cCI6MTc0NjEzNTI5Mn0.MVMC5qMuQIKOxal-psNpWUrzfyx4SWOEPspG5Uk7uJc",
 									"type": "string"
 								}
 							]
@@ -1254,21 +1355,18 @@
 				},
 				{
 					"name": "Generar graficas",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjE4MDksImV4cCI6MTc0NjEyNTQwOX0.PA6o_Vx5rpzPLtMITklEAZ8zmoPuYAaYiaq2C_o7jKI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjU5NjQsImV4cCI6MTc0NjEyOTU2NH0.wpHJGce2VkmyMO2MAd9Se5XRFHEGSV4zCFD77PqHyAA",
 									"type": "string"
 								}
 							]
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
