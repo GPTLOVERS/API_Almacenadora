@@ -420,7 +420,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxNTU1MzQsImV4cCI6MTc0NjE1OTEzNH0.XcT5G8h0_bVJtiyfin0Bf9DlAGR_bfr_rHSae7lAR5k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYzMDk2NzAsImV4cCI6MTc0NjMxMzI3MH0.8X4JOHlfhRVok-eEK0ZFVN0DBt-Kx_U9Kcj1hkKHOCI",
 									"type": "string"
 								}
 							]
@@ -429,7 +429,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n     \"name\": \"Croissants de Mantequille\",\r\n    \"description\": \"Deliciosos croissants de mantequilla recién horneados.\",\r\n    \"price\": 12.00,\r\n    \"brand\": \"Pastelería Los Andes\"\r\n}",
+							"raw": "{\r\n     \"name\": \"Croissants de Mantequilla\",\r\n    \"description\": \"Deliciosos croissants de mantequilla recién horneados.\",\r\n    \"price\": 12.00,\r\n    \"category\": \"Pan\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -467,7 +467,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ODM0OGI1YjE2YjgwYWEyMDRhMjMiLCJpYXQiOjE3NDExMjg1MjMsImV4cCI6MTc0MTEzMjEyM30.QVVMMLB6RATdQshBuQLSTG15A3CldJlQFO1fFJHKFsA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYzMDg2NDUsImV4cCI6MTc0NjMxMjI0NX0.VKP2iOlOZsqFoCUIF0mRCfsh_DdGHeCiX_1wAqSLygM",
 									"type": "string"
 								}
 							]
@@ -615,7 +615,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0ZGI3MzYzOTFjNjU0ZGJmY2U1ZGUiLCJpYXQiOjE3NDYyMDEzODIsImV4cCI6MTc0NjIwNDk4Mn0.3uzPjIQRc81QjVDXObr40wjhlKEDSxgBSobhCgI-Ang",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYyOTg2MjIsImV4cCI6MTc0NjMwMjIyMn0.sbicGYSzQdu-J2DoFmbyKjUxVLEL3v3Mv7LMxnfK_NI",
 									"type": "string"
 								}
 							]
@@ -668,7 +668,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Queso Rayado\",\r\n    \"description\": \"que en rallas\",\r\n    \"price\": 25.00,\r\n    \"stock\": 5,\r\n    \"brand\": \"Palma\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Queso Rayado\",\r\n    \"description\": \"que en rallas\",\r\n    \"price\": 25.00,\r\n    \"stock\": 5,\r\n    \"category\": \"Lacteos\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -864,7 +864,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYwNzEzMzMsImV4cCI6MTc0NjA3NDkzM30.Yzp-GuoxYrSiFco76aBf4nrlBsLgJ2hrS260Bk0Ylt0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYzMDQ0MTAsImV4cCI6MTc0NjMwODAxMH0.Y-FLKKd8-9WNQKSGB-I31Ll8lGLEiKuw5R2nfUAWhX0",
 									"type": "string"
 								}
 							]
