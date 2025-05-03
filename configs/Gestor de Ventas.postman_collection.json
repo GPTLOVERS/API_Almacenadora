@@ -1,16 +1,9 @@
 {
 	"info": {
-<<<<<<< HEAD:configs/enpoints_collection.json
-		"_postman_id": "ce6ce512-4b7c-4c45-b506-ebe4ad66e59e",
-		"name": "Gestor de Ventas",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37641954"
-=======
 		"_postman_id": "57e52b0b-e33f-4596-975e-9213c5d0ed78",
 		"name": "Gestor de Ventas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "38544176"
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 	},
 	"item": [
 		{
@@ -427,7 +420,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzIzMTAsImV4cCI6MTc0NTk3NTkxMH0.mC24yXNz1HyiM0hBluCB5mhfGqgKn7Z_ROQ2_bnQLJg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxNTU1MzQsImV4cCI6MTc0NjE1OTEzNH0.XcT5G8h0_bVJtiyfin0Bf9DlAGR_bfr_rHSae7lAR5k",
 									"type": "string"
 								}
 							]
@@ -436,7 +429,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n     \"name\": \"Croissants de Mantequilla\",\r\n    \"description\": \"Deliciosos croissants de mantequilla recién horneados.\",\r\n    \"price\": 12.00,\r\n    \"brand\": \"Pastelería Los Andes\"\r\n}",
+							"raw": "{\r\n     \"name\": \"Croissants de Mantequille\",\r\n    \"description\": \"Deliciosos croissants de mantequilla recién horneados.\",\r\n    \"price\": 12.00,\r\n    \"brand\": \"Pastelería Los Andes\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -612,6 +605,53 @@
 					"response": []
 				},
 				{
+					"name": "Filtrar producto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0ZGI3MzYzOTFjNjU0ZGJmY2U1ZGUiLCJpYXQiOjE3NDYyMDEzODIsImV4cCI6MTc0NjIwNDk4Mn0.3uzPjIQRc81QjVDXObr40wjhlKEDSxgBSobhCgI-Ang",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receipts\": \"2025-04-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/product/filterProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"product",
+								"filterProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Actualizar Producto",
 					"request": {
 						"auth": {
@@ -628,7 +668,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Queso Rayado\",\r\n    \"description\": \"que en rallas\",\r\n    \"price\": 25.00,\r\n    \"stock\": 5,\r\n    \"brand\": \"Palma\",\r\n    \"category\": \"67b14aec70945fe2dc5ad883\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Queso Rayado\",\r\n    \"description\": \"que en rallas\",\r\n    \"price\": 25.00,\r\n    \"stock\": 5,\r\n    \"brand\": \"Palma\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -777,7 +817,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwMmUyNWJhM2ZhMGRlOGJkNDkyNzgiLCJpYXQiOjE3NDU5NzIzMTAsImV4cCI6MTc0NTk3NTkxMH0.mC24yXNz1HyiM0hBluCB5mhfGqgKn7Z_ROQ2_bnQLJg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMzg2NDQsImV4cCI6MTc0NjE0MjI0NH0.Jug385VKQZ6zt66pqbE9vSVnXad_IvqYcCv6ILMXWrg",
 									"type": "string"
 								}
 							]
@@ -815,111 +855,25 @@
 				},
 				{
 					"name": "Buscar Proveedores",
-<<<<<<< HEAD:configs/enpoints_collection.json
-=======
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-<<<<<<< HEAD:configs/enpoints_collection.json
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
-=======
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYwNzEzMzMsImV4cCI6MTc0NjA3NDkzM30.Yzp-GuoxYrSiFco76aBf4nrlBsLgJ2hrS260Bk0Ylt0",
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-<<<<<<< HEAD:configs/enpoints_collection.json
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/getProveedores",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3005",
-							"path": [
-								"salesManager",
-								"v1",
-								"proveedores",
-								"getProveedores"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Buscar Proveedores por Id",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores//getProveedorById/680eda93fe7988a868c7513a",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3005",
-							"path": [
-								"salesManager",
-								"v1",
-								"proveedores",
-								"",
-								"getProveedorById",
-								"680eda93fe7988a868c7513a"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Editar Proveedor",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Proveedor Actualizado\",\r\n  \"email\": \"nuevoemail@ejemplo.com\"\r\n}",
-=======
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 							"options": {
 								"raw": {
 									"language": "json"
@@ -927,11 +881,7 @@
 							}
 						},
 						"url": {
-<<<<<<< HEAD:configs/enpoints_collection.json
-							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/updateProveedor/680eda93fe7988a868c7513a",
-=======
 							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/getProveedores",
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 							"protocol": "http",
 							"host": [
 								"127",
@@ -944,10 +894,6 @@
 								"salesManager",
 								"v1",
 								"proveedores",
-<<<<<<< HEAD:configs/enpoints_collection.json
-								"updateProveedor",
-								"680eda93fe7988a868c7513a"
-=======
 								"getProveedores"
 							]
 						}
@@ -962,7 +908,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjE4MDksImV4cCI6MTc0NjEyNTQwOX0.PA6o_Vx5rpzPLtMITklEAZ8zmoPuYAaYiaq2C_o7jKI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMzg2NDQsImV4cCI6MTc0NjE0MjI0NH0.Jug385VKQZ6zt66pqbE9vSVnXad_IvqYcCv6ILMXWrg",
 									"type": "string"
 								}
 							]
@@ -991,39 +937,24 @@
 									"key": "id",
 									"value": "68116cd1666d5c6630001d32"
 								}
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 							]
 						}
 					},
 					"response": []
 				},
 				{
-<<<<<<< HEAD:configs/enpoints_collection.json
-					"name": "New Request",
-=======
 					"name": "Editar Proveedor",
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-<<<<<<< HEAD:configs/enpoints_collection.json
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlZGE3OWZlNzk4OGE4NjhjNzUxMzUiLCJpYXQiOjE3NDU4MDM5MDUsImV4cCI6MTc0NTgwNzUwNX0.AassXlJTDlw4gYfB_NdH7uqY20wLuoE-2ipH45ox-Rk",
-=======
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYwNjM0OTEsImV4cCI6MTc0NjA2NzA5MX0.y6IfygHFCzzAkXv7P8fcav5JB3hjLsDVrK6vsJ4ANpg",
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 									"type": "string"
 								}
 							]
 						},
-<<<<<<< HEAD:configs/enpoints_collection.json
-						"method": "PATCH",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/deleteProveedor/680eda93fe7988a868c7513a",
-=======
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -1037,7 +968,6 @@
 						},
 						"url": {
 							"raw": "http://127.0.0.1:3005/salesManager/v1/proveedores/updateProveedor/:id",
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1050,8 +980,6 @@
 								"salesManager",
 								"v1",
 								"proveedores",
-<<<<<<< HEAD:configs/enpoints_collection.json
-=======
 								"updateProveedor",
 								":id"
 							],
@@ -1103,7 +1031,6 @@
 								"salesManager",
 								"v1",
 								"proveedores",
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
 								"deleteProveedor",
 								"680eda93fe7988a868c7513a"
 							]
@@ -1158,6 +1085,60 @@
 								"v1",
 								"batch",
 								"getBatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Lote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxNTAxMDIsImV4cCI6MTc0NjE1MzcwMn0.-X2PValQPpWMAAEhx-aeIogYgxk7vUmhVUp5H5XPwuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/salesManager/v1/batch/findBatch/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"salesManager",
+								"v1",
+								"batch",
+								"findBatch",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "68117b41326f144ddb076327"
+								}
 							]
 						}
 					},
@@ -1301,7 +1282,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjczODUsImV4cCI6MTc0NjEzMDk4NX0.vz3WL65lNBQRctKa_t8rkSnPNhxyriYYZg8az1ATYJ0",
 									"type": "string"
 								}
 							]
@@ -1336,7 +1317,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMzE2OTIsImV4cCI6MTc0NjEzNTI5Mn0.MVMC5qMuQIKOxal-psNpWUrzfyx4SWOEPspG5Uk7uJc",
 									"type": "string"
 								}
 							]
@@ -1374,25 +1355,18 @@
 				},
 				{
 					"name": "Generar graficas",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-<<<<<<< HEAD:configs/enpoints_collection.json
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODExNTgxZDZkNTQ0YmNiZmVhZGQxNzgiLCJpYXQiOjE3NDYwNzE3NzgsImV4cCI6MTc0NjA3NTM3OH0.XtXuGSxI8G_5BqQcwDw12la5SwTy6L40A43jJ1YWIj4",
-=======
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjE4MDksImV4cCI6MTc0NjEyNTQwOX0.PA6o_Vx5rpzPLtMITklEAZ8zmoPuYAaYiaq2C_o7jKI",
->>>>>>> ca6e5358582711cbd73ee5299e1af6a0e114d823:configs/Gestor de Ventas.postman_collection.json
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNWM0NjMzYTcyYjUxMDY5ZThlYTEiLCJpYXQiOjE3NDYxMjU5NjQsImV4cCI6MTc0NjEyOTU2NH0.wpHJGce2VkmyMO2MAd9Se5XRFHEGSV4zCFD77PqHyAA",
 									"type": "string"
 								}
 							]
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
