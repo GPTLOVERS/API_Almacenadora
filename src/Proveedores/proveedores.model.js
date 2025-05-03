@@ -31,6 +31,10 @@ const proveedorSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: "Product"
     }],
+    category:{
+        type: String,
+        default: "common"
+    },
     status: {
         type: Boolean,
         default: true
