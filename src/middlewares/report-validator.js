@@ -33,7 +33,7 @@ export const generateInventoryMovementsReportValidator = [
 
 export const generateAndSaveGraphImageValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE", "EMPLOYEE_ROLE", "CLIENT_ROLE"),
+    hasRoles("ADMIN_ROLE", "EMPLOYEE_ROLE"),
     validationsFields,
     catchErrors
 ]

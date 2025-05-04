@@ -7,7 +7,7 @@ import { proveedorExist } from "../helpers/db-validators.js"; // Asegúrate de q
 
 export const registerProveedorValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "EMPLOYEE_ROLE"),
     body("name").notEmpty().withMessage("Name is required").isString().withMessage("Name must be a string"),
     body("company").notEmpty().withMessage("Company name is required").isString().withMessage("Company must be a string"),
     body("email").notEmpty().withMessage("Email is required").isEmail().withMessage("Invalid email format"),
@@ -19,9 +19,9 @@ export const registerProveedorValidator = [
 
 export const findProveedorValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "EMPLOYEE_ROLE"),
     param("id").isMongoId().withMessage("ID is not valid").notEmpty().withMessage("ID is required").custom(async (id) => {
-        await proveedorExist(id); // Llama a la función para verificar si el proveedor existe
+        await proveedorExist(id);
     }),
     validationsFields,
     catchErrors
@@ -29,9 +29,9 @@ export const findProveedorValidator = [
 
 export const updateProveedorValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "EMPLOYEE_ROLE"),
     param("id").isMongoId().withMessage("ID is not valid").notEmpty().withMessage("ID is required").custom(async (id) => {
-        await proveedorExist(id); // Llama a la función para verificar si el proveedor existe
+        await proveedorExist(id);
     }),
     body("name").optional().isString().withMessage("Name must be a string"),
     body("company").optional().isString().withMessage("Company must be a string"),
@@ -46,7 +46,7 @@ export const deleteProveedorValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
     param("id").isMongoId().withMessage("ID is not valid").notEmpty().withMessage("ID is required").custom(async (id) => {
-        await proveedorExist(id); // Llama a la función para verificar si el proveedor existe
+        await proveedorExist(id);
     }),
     validationsFields,
     catchErrors
