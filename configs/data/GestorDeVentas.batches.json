@@ -1,14 +1,14 @@
 [{
   "_id": {
-    "$oid": "680f90596a088fa6fc3322b0"
+    "$oid": "68115e1c6d544bcbfeadd184"
   },
   "noBatch": "1",
   "type": "prueba",
   "product": {
-    "$oid": "680f8e1fdeb74698dc94d152"
+    "$oid": "68115af86d544bcbfeadd17d"
   },
   "proveedor": {
-    "$oid": "680f8e2bdeb74698dc94d156"
+    "$oid": "68115d3b6d544bcbfeadd181"
   },
   "dateOfEntry": {
     "$date": "2025-02-02T00:00:00.000Z"
@@ -17,120 +17,55 @@
 },
 {
   "_id": {
-    "$oid": "680f94178ddd9335326c8bf3"
+    "$oid": "6816a369d9e5f92063ba3bf4"
   },
   "noBatch": "2",
-  "type": "pruebaUpdateada",
+  "type": "ingreso",
   "product": {
-    "$oid": "680f8e1fdeb74698dc94d152"
+    "$oid": "68169bafd9e5f92063ba3be7"
   },
   "proveedor": {
-    "$oid": "680f8e2bdeb74698dc94d156"
+    "$oid": "6816a251d9e5f92063ba3bee"
   },
   "dateOfEntry": {
-    "$date": "2025-10-02T00:00:00.000Z"
+    "$date": "2025-02-02T00:00:00.000Z"
   },
-  "status": false
+  "stockEntry": 80,
+  "status": true
 },
 {
   "_id": {
-    "$oid": "680f9a2db6bd2165d83bcc67"
+    "$oid": "6816ae52d9e5f92063ba3c00"
   },
   "noBatch": "3",
-  "type": "Comida",
+  "type": "liquidacion",
   "product": {
-    "$oid": "680f8e1fdeb74698dc94d152"
+    "$oid": "68169c1fd9e5f92063ba3bea"
   },
   "proveedor": {
-    "$oid": "680f8e2bdeb74698dc94d156"
+    "$oid": "6816a251d9e5f92063ba3bee"
   },
   "dateOfEntry": {
-    "$date": "2025-02-02T00:00:00.000Z"
+    "$date": "2025-02-05T00:00:00.000Z"
   },
+  "stockEntry": 30,
   "status": true
 },
 {
   "_id": {
-    "$oid": "680f9a3bb6bd2165d83bcc6a"
-  },
-  "noBatch": "4",
-  "type": "Electronicos",
-  "product": {
-    "$oid": "680f8e1fdeb74698dc94d152"
-  },
-  "proveedor": {
-    "$oid": "680f8e2bdeb74698dc94d156"
-  },
-  "dateOfEntry": {
-    "$date": "2025-02-02T00:00:00.000Z"
-  },
-  "status": true
-},
-{
-  "_id": {
-    "$oid": "680f9a59b6bd2165d83bcc73"
-  },
-  "noBatch": "5",
-  "type": "Lacteos",
-  "product": {
-    "$oid": "680f8e1fdeb74698dc94d152"
-  },
-  "proveedor": {
-    "$oid": "680f8e2bdeb74698dc94d156"
-  },
-  "dateOfEntry": {
-    "$date": "2025-02-02T00:00:00.000Z"
-  },
-  "status": true
-},
-{
-  "_id": {
-    "$oid": "680f9a68b6bd2165d83bcc76"
+    "$oid": "681805b39e98459b68c3b8b9"
   },
   "noBatch": "6",
-  "type": "Deportes",
+  "type": "Pan",
   "product": {
-    "$oid": "680f8e1fdeb74698dc94d152"
+    "$oid": "6816992ed9e5f92063ba3be1"
   },
   "proveedor": {
-    "$oid": "680f8e2bdeb74698dc94d156"
+    "$oid": "68169880d9e5f92063ba3bda"
   },
   "dateOfEntry": {
-    "$date": "2025-02-02T00:00:00.000Z"
+    "$date": "2025-05-04T00:00:00.000Z"
   },
-  "status": true
-},
-{
-  "_id": {
-    "$oid": "680f9a80b6bd2165d83bcc79"
-  },
-  "noBatch": "7",
-  "type": "Juguetes",
-  "product": {
-    "$oid": "680f8e1fdeb74698dc94d152"
-  },
-  "proveedor": {
-    "$oid": "680f8e2bdeb74698dc94d156"
-  },
-  "dateOfEntry": {
-    "$date": "2025-02-02T00:00:00.000Z"
-  },
-  "status": true
-},
-{
-  "_id": {
-    "$oid": "680f9a92b6bd2165d83bcc7c"
-  },
-  "noBatch": "8",
-  "type": "Limpieza",
-  "product": {
-    "$oid": "680f8e1fdeb74698dc94d152"
-  },
-  "proveedor": {
-    "$oid": "680f8e2bdeb74698dc94d156"
-  },
-  "dateOfEntry": {
-    "$date": "2025-02-02T00:00:00.000Z"
-  },
+  "stockEntry": 3,
   "status": true
 }]
