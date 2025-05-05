@@ -1,9 +1,9 @@
 
-# Proyecto Final
+# Almacenadora
 
 Para tener el proyecto en local, primero ha que abrir la terminal desde la ruta que se desee descargar el proyecto y colocar el siguiente comando:
 
-- git clone https://github.com/JH1018/Proyecto_Final.git
+- git clone https://github.com/GPTLOVERS/API_Almacenadora
 
 Para poder iniciar el proyecto hay que abrir la consola dentro la carpeta del proyecto y colocar el siguiente comando para poder instalar las dependencias:
 
@@ -30,15 +30,8 @@ Para acceder a la documentación hay que escribir esta ruta en el navegador http
 
 
 # Credenciales
-userName: Zodiacal0
 
 email: javierherrera5510@gmail.com
-
-contraseña: Dispositibo1@
-
-userName: toto
-
-email: rodrigoherrera5512@gmail.com
 
 contraseña: Dispositibo1@
 
