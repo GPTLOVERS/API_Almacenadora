@@ -1,51 +1,26 @@
 [{
   "_id": {
-    "$oid": "67caf3228789ee64c02b0037"
+    "$oid": "681151991f09cb847b4fc054"
   },
   "name": "Admin",
   "surname": "Admin",
   "userName": "admin",
   "email": "adminexample@gmail.com",
-  "password": "Admin123@",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$mkuxLr6PgS9p5YHmoJu6Xg$QmCCVxk6A5EVLtDGMziKEgrdJbyx6tGvmOePYCRkw3o",
   "phone": "12345678",
   "role": "ADMIN_ROLE",
-  "history": [],
   "status": true
 },
 {
   "_id": {
-    "$oid": "67c78348b5b16b80aa204a23"
+    "$oid": "68169664d9e5f92063ba3bd1"
   },
   "name": "Javier",
   "surname": "Herrera",
-  "userName": "confleis53",
-  "profilePicture": null,
-  "email": "javierherrera5510@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$YsIiQvfBcskBnZKYvCYFgw$ObflFMwKvgCFP4SJ16ZoB9SNkW+DPpZgivp7aZg6tJo",
+  "userName": "Zodiacal",
+  "email": "javierherrera5513@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$q598AiE47k4npf1V/ymzIw$VStfAC/+GSdQH7Su+XtoVrinG8SqlKwM9lAKOAVHtEs",
   "phone": "12345678",
   "role": "ADMIN_ROLE",
-  "history": [
-    {
-      "$oid": "67c78367b5b16b80aa204a29"
-    },
-    {
-      "$oid": "67c78c28501ddaffb94ebe0c"
-    }
-  ],
-  "status": true
-},
-{
-  "_id": {
-    "$oid": "67caf5096dfa06e86590c2c4"
-  },
-  "name": "Rodrigo",
-  "surname": "Herrera",
-  "userName": "toto",
-  "profilePicture": null,
-  "email": "rodrigoherrera5512@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$5CJAfUWhAN0PztmkpY2JuA$28mKzSHlU8/T7GqXEZMhf8g2+PUBGvydjha0UZFUs7U",
-  "phone": "12345678",
-  "role": "CLIENT_ROLE",
-  "history": [],
   "status": true
 }]

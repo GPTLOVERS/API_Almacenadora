@@ -1,0 +1,86 @@
+[{
+  "_id": {
+    "$oid": "68115d3b6d544bcbfeadd181"
+  },
+  "name": "Proveedor Ejemplo",
+  "company": "Compañía Ejemplo",
+  "email": "proveedor@ejemplo.com",
+  "phone": "123456789",
+  "address": "Calle Ejemplo #123, Ciudad Ejemplo",
+  "products": [],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-04-29T23:14:03.810Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-29T23:14:03.810Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68169880d9e5f92063ba3bda"
+  },
+  "name": "Alimentos Naturales S.A",
+  "company": "Alimentos Naturales S.A",
+  "email": "contacto@alimentosnaturales.com.gt",
+  "phone": "98765432",
+  "address": "Avenida Reforma 5-25, Ciudad de Guatemala",
+  "products": [
+    {
+      "$oid": "6816992ed9e5f92063ba3be1"
+    }
+  ],
+  "category": "common",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-03T22:28:16.080Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T00:26:28.050Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68169894d9e5f92063ba3bde"
+  },
+  "name": "Distribuidora La Loba",
+  "company": "Distribuidora La Loba S.A.",
+  "email": "info@laloba.com.gt",
+  "phone": "23456789",
+  "address": "Zona 10, Calle 15-20, Ciudad de Guatemala",
+  "products": [],
+  "category": "common",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-03T22:28:36.417Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-03T22:28:36.417Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6816a251d9e5f92063ba3bee"
+  },
+  "name": "Alimentos Congelados S.A.",
+  "company": "Alimentos Congelados S.A.",
+  "email": "alimentos@congelados.com.gt",
+  "phone": "21324354",
+  "address": "Calle 6-25, Zona 8, Ciudad de Guatemala",
+  "products": [
+    {
+      "$oid": "68169bafd9e5f92063ba3be7"
+    },
+    {
+      "$oid": "68169c1fd9e5f92063ba3bea"
+    }
+  ],
+  "category": "common",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-03T23:10:09.010Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T00:01:22.887Z"
+  }
+}]
