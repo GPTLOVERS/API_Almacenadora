@@ -1,0 +1,92 @@
+[{
+  "_id": {
+    "$oid": "67c78867501ddaffb94ebd93"
+  },
+  "name": "Frutas y Verduras",
+  "description": "Productos frescos como frutas, verduras, y hierbas aromáticas.",
+  "products": [
+    {
+      "$oid": "67c7895e501ddaffb94ebda0"
+    },
+    {
+      "$oid": "67c789b5501ddaffb94ebdaf"
+    }
+  ],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c78871501ddaffb94ebd95"
+  },
+  "name": "Lácteos",
+  "description": "Leche, queso, yogur, y otros productos derivados de la leche.",
+  "products": [
+    {
+      "$oid": "67c78980501ddaffb94ebda3"
+    }
+  ],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c78877501ddaffb94ebd97"
+  },
+  "name": "Carnes",
+  "description": "Carne de res, cerdo, pollo, y embutidos.",
+  "products": [
+    {
+      "$oid": "67c7899c501ddaffb94ebda6"
+    },
+    {
+      "$oid": "67c789c4501ddaffb94ebdb5"
+    }
+  ],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c7887c501ddaffb94ebd99"
+  },
+  "name": "Bebidas",
+  "description": "Agua, jugos, refrescos, cervezas, vinos y otras bebidas.",
+  "products": [
+    {
+      "$oid": "67c789cd501ddaffb94ebdb8"
+    },
+    {
+      "$oid": "67c789a5501ddaffb94ebda9"
+    }
+  ],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c78882501ddaffb94ebd9b"
+  },
+  "name": "Panadería",
+  "description": "Pan, bollería, galletas y otros productos de panadería.",
+  "products": [
+    {
+      "$oid": "67c789ae501ddaffb94ebdac"
+    },
+    {
+      "$oid": "67c789d4501ddaffb94ebdbb"
+    }
+  ],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c78888501ddaffb94ebd9d"
+  },
+  "name": "Panadería",
+  "description": "Pan, bollería, galletas y otros productos de panadería.",
+  "products": [],
+  "status": true,
+  "__v": 0
+}]

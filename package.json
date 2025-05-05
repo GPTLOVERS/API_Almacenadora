@@ -1,0 +1,51 @@
+{
+  "name": "venta_online",
+  "version": "1.0.0",
+  "description": "Gestiona el registro de productos de ventas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zodiacal0/Proyecto_Final.git"
+  },
+  "keywords": [
+    "Registro",
+    "Ventas",
+    "Gestionador"
+  ],
+  "author": "Javier",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Zodiacal0/Proyecto_Final/issues"
+  },
+  "homepage": "https://github.com/Zodiacal0/Proyecto_Final#readme",
+  "dependencies": {
+    "argon2": "^0.41.1",
+    "canvas": "^3.1.0",
+    "chart.js": "^4.4.9",
+    "chartjs-node-canvas": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.16.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "venta_online": "file:"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
