@@ -1,160 +1,86 @@
 [{
   "_id": {
-    "$oid": "67c7895e501ddaffb94ebda0"
-  },
-  "name": "Queso Rayado",
-  "description": "que en rallas",
-  "price": 25,
-  "stock": 5,
-  "category": {
-    "$oid": "67c78867501ddaffb94ebd93"
-  },
-  "brand": "Palma",
-  "code": 9540,
-  "status": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c78980501ddaffb94ebda3"
-  },
-  "name": "Leche Entera",
-  "description": "Leche entera pasteurizada, rica en nutrientes.",
-  "price": 7,
-  "stock": 198,
-  "category": {
-    "$oid": "67c78871501ddaffb94ebd95"
-  },
-  "brand": "La Lechera",
-  "code": 6182,
-  "status": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c7899c501ddaffb94ebda6"
-  },
-  "name": "Pechuga de Pollo",
-  "description": "Pechuga de pollo sin hueso, fresca.",
-  "price": 30,
-  "stock": 79,
-  "category": {
-    "$oid": "67c78877501ddaffb94ebd97"
-  },
-  "brand": "Pollo Supremo",
-  "code": 8437,
-  "status": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c789a5501ddaffb94ebda9"
-  },
-  "name": "Cerveza Lager",
-  "description": "Cerveza lager de sabor suave y refrescante.",
-  "price": 10,
-  "stock": 100,
-  "category": {
-    "$oid": "67c7887c501ddaffb94ebd99"
-  },
-  "brand": "Cerveza Dorada",
-  "code": 6862,
-  "status": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c789ae501ddaffb94ebdac"
-  },
-  "name": "Pan de Caja",
-  "description": "Pan de caja fresco, ideal para sandwiches.",
-  "price": 8,
-  "stock": 249,
-  "category": {
-    "$oid": "67c78882501ddaffb94ebd9b"
-  },
-  "brand": "Panadería El Sol",
-  "code": 4781,
-  "status": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c789b5501ddaffb94ebdaf"
-  },
-  "name": "Tomate Rojo",
-  "description": "Tomates rojos, frescos y firmes.",
-  "price": 9,
-  "stock": 177,
-  "category": {
-    "$oid": "67c78867501ddaffb94ebd93"
-  },
-  "brand": "Verduras Frescas",
-  "code": 4543,
-  "status": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c789bd501ddaffb94ebdb2"
-  },
-  "name": "Queso Fresco",
-  "description": "Queso fresco, suave y delicioso.",
-  "price": 20,
-  "stock": 60,
-  "category": {
-    "$oid": "634b4d9fc3a5f35c9f8f83e7"
-  },
-  "brand": "Lácteos San Juan",
-  "code": 9333,
-  "status": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c789c4501ddaffb94ebdb5"
-  },
-  "name": "Carne de Res",
-  "description": "Carne de res de alta calidad, fresca.",
-  "price": 45,
-  "stock": 50,
-  "category": {
-    "$oid": "67c78877501ddaffb94ebd97"
-  },
-  "brand": "Carnes El Toro",
-  "code": 8884,
-  "status": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c789cd501ddaffb94ebdb8"
-  },
-  "name": "Jugo de Naranja Natural",
-  "description": "Jugo natural de naranja 100% puro.",
-  "price": 15,
-  "stock": 120,
-  "category": {
-    "$oid": "67c7887c501ddaffb94ebd99"
-  },
-  "brand": "Jugos del Valle",
-  "code": 6340,
-  "status": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c789d4501ddaffb94ebdbb"
+    "$oid": "6816992ed9e5f92063ba3be1"
   },
   "name": "Croissants de Mantequilla",
   "description": "Deliciosos croissants de mantequilla recién horneados.",
   "price": 12,
-  "stock": 80,
-  "category": {
-    "$oid": "67c78882501ddaffb94ebd9b"
+  "stock": 59,
+  "batch": [
+    {
+      "$oid": "681805b39e98459b68c3b8b9"
+    }
+  ],
+  "popularity": 42,
+  "category": "Pan",
+  "receipts": [
+    "Sat May 03 2025 18:00:00 GMT-0600 (hora estándar central)"
+  ],
+  "issues": [],
+  "history": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68169af6d9e5f92063ba3be4"
   },
-  "brand": "Pastelería Los Andes",
-  "code": 6685,
+  "name": "Baguette Francés",
+  "description": "Baguette crujiente y fresco, ideal para acompañar comidas.",
+  "price": 15,
+  "stock": 36,
+  "batch": [],
+  "popularity": 12,
+  "category": "Pan",
+  "receipts": [],
+  "issues": [],
+  "history": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68169bafd9e5f92063ba3be7"
+  },
+  "name": "Pizza congelada",
+  "description": "Pizza clásica con salsa de tomate, queso mozzarella y albahaca fresca.",
+  "price": 35,
+  "stock": 80,
+  "batch": [
+    {
+      "$oid": "6816a369d9e5f92063ba3bf4"
+    }
+  ],
+  "popularity": 25,
+  "category": "Comida congelada",
+  "receipts": [
+    "Sat Feb 01 2025 18:00:00 GMT-0600 (hora estándar central)"
+  ],
+  "issues": [],
+  "history": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68169c1fd9e5f92063ba3bea"
+  },
+  "name": "Medallones congelados",
+  "description": "Medallones clasicos.",
+  "price": 25,
+  "stock": 30,
+  "batch": [
+    {
+      "$oid": "6816ae52d9e5f92063ba3c00"
+    }
+  ],
+  "popularity": 26,
+  "category": "Comida congelada",
+  "receipts": [
+    "Tue Feb 04 2025 18:00:00 GMT-0600 (hora estándar central)"
+  ],
+  "issues": [],
+  "history": [],
   "status": true,
   "__v": 0
 }]
